@@ -2,7 +2,7 @@
 
 # Compiler and linker settings
 CC = cc
-WINDRES = windres
+RC = windres
 
 # Compiler flags
 CFLAGS = -Wall -g
@@ -37,7 +37,7 @@ $(TARGET): $(OBJS) $(RES_OBJ)
 
 # Resource compilation
 $(RES_OBJ): $(RES_SCRIPT) $(HEADERS)
-	$(WINDRES) -O coff $< $@
+	$(RC) -O coff $< $@
 
 # Clean rule
 clean:

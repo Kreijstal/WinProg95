@@ -9,7 +9,7 @@ $(TARGET): $(OBJS)
 	$(CC) -o $(TARGET) $(OBJS) $(LIBS)
 
 Blowup_res.o: Blowup.rc
-	windres $< $@
+	$(RC) $< $@
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
