@@ -3,13 +3,13 @@ LDFLAGS = -mwindows
 LDLIBS = -lwinmm -lcomctl32 -lwininet
 
 TARGET = UpdDemo.exe
-OBJS = UpdDemo.o UpdDemo_rc.o
+OBJS = UpdDemo.o UpdDemo.res
 
 $(TARGET): $(OBJS)
 	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LDLIBS)
 
-UpdDemo_rc.o: UpdDemo.rc
-	windres -O coff UpdDemo.rc UpdDemo_rc.o
+%.res: %.rc
+	$(RC) $< -O coff -o $@
 
 clean:
 	rm -f $(TARGET) $(OBJS)
