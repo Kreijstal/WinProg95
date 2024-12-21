@@ -11,7 +11,7 @@ $(TARGET): $(SRCS) $(RES)
 	$(CC) $(CFLAGS) $(SRCS) $(RES) -o $(TARGET) $(WINLIBS)
 
 $(RES): ChosFont.rc
-	$(RC) -i $< -o $@ --target=pe-i386
+	$(RC) -i $< -o $@ --target=pe-x86-64
 
 clean:
 	rm -f $(TARGET) $(RES)
