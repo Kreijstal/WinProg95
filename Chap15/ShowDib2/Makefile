@@ -19,7 +19,7 @@ $(TARGET): $(OBJS) $(RES)
 %.o: ../ShowDib1/%.c
 	$(CC) $(CFLAGS) -c $<
 
-$(RES): ShowDib2.rc resource.h
+$(RES): ShowDib2.rc Resource.h
 	$(WINDRES) -O coff ShowDib2.rc $(RES)
 
 clean:
