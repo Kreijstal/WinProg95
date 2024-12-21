@@ -1,9 +1,13 @@
+CFLAGS = -Wall
+LDFLAGS = -mwindows 
+LDLIBS = -lcomctl32
+
 .PHONY: all clean
 
-all: poppad1.exe
+all: PopPad1.exe
 
-poppad1.exe: poppad1.c
-	cc poppad1.c -o poppad1.exe -Wall -mwindows -lcomctl32
+PopPad1.exe: PopPad1.o
+	$(CC) $(LDFLAGS) -o $@ $^ $(LDLIBS)
 
 clean:
-	rm -f poppad1.exe
+	rm -f PopPad1.exe PopPad1.o
