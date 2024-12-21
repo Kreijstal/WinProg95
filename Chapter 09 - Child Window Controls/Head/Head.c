@@ -82,7 +82,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	static TCHAR    szFile[MAX_PATH + 1];
 	HANDLE          hFile;
 	HDC             hdc;
-	int             i, cxChar, cyChar;
+	DWORD           i;
+	int             cxChar, cyChar;
 	PAINTSTRUCT     ps;
 	TCHAR           szBuffer[MAX_PATH + 1];
 
@@ -197,7 +198,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 		// Assume the file is ASCII
 
-		DrawTextA(hdc, buffer, i, &rect, DTFLAGS);
+		DrawTextA(hdc, (LPSTR)buffer, i, &rect, DTFLAGS);
 
 		EndPaint(hWnd, &ps);
 		return 0;
