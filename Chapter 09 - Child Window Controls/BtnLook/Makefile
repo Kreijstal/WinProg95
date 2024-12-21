@@ -1,9 +1,17 @@
 .PHONY: all clean
 
-all: BtnLook.exe
+CFLAGS = -Wall
+LDFLAGS = -mwindows
+LDLIBS = -lcomctl32
 
-BtnLook.exe: BtnLook.c
-	cc BtnLook.c -o BtnLook.exe -Wall -mwindows -lcomctl32
+TARGET = BtnLook.exe
+OBJS = BtnLook.o BtnLook.res
+
+$(TARGET): $(OBJS)
+	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LDLIBS)
+
+%.res: %.rc
+	$(RC) $< -O coff -o $@
 
 clean:
-	rm -f BtnLook.exe
+	rm -f $(TARGET) $(OBJS)

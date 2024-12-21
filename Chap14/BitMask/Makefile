@@ -1,18 +1,14 @@
-CC = cc
 CFLAGS = -Wall -mwindows
-LIBS = -lgdi32
+LDLIBS = -lgdi32
 
 TARGET = BitMask.exe
-OBJS = BitMask.o BitMask_res.o
+OBJS = BitMask.o BitMask.res
 
 $(TARGET): $(OBJS)
-	$(CC) -o $(TARGET) $(OBJS) $(LIBS)
+	$(CC) $(CFLAGS) -o $@ $(OBJS) $(LDLIBS)
 
-BitMask_res.o: BitMask.rc
-	windres $< $@
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+%.res: %.rc
+	$(RC) $< -O coff -o $@
 
 clean:
 	rm -f $(TARGET) $(OBJS)
