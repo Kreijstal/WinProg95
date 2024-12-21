@@ -12,7 +12,7 @@ IconDemo.o: IconDemo.c
 	$(CC) $(CFLAGS) -c $<
 
 IconDemo_res.o: IconDemo.rc Resource.h IconDemo.ico
-	$(RC) $< $@
+	$(RC) -O coff $< $@
 
 clean:
 	rm -f *.exe *.o
