@@ -1,0 +1,17 @@
+CC = gcc
+CFLAGS = -Wall -Wextra -g
+WINLIBS = -lgdi32 -luser32 -lkernel32 -lcomctl32
+RC = windres
+
+TARGET = Justify1
+SRCS = Justify1.c
+RES = Justify1.res
+
+$(TARGET): $(SRCS) $(RES)
+	$(CC) $(CFLAGS) $(SRCS) $(RES) -o $(TARGET) $(WINLIBS)
+
+$(RES): Justify1.rc
+	$(RC) -i $< -o $@ --target=pe-x86-64
+
+clean:
+	rm -f $(TARGET) $(RES)
