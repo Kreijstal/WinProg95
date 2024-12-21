@@ -4,8 +4,15 @@
   --------------------------------------*/
 
 #include <windows.h>
+#include <stdlib.h>  // for malloc/free
 
 #define ID_TIMER 1
+
+// Function prototypes
+HPALETTE CreateRoutine(HWND hwnd);
+void PaintRoutine(HDC hdc, int cxClient, int cyClient);
+void TimerRoutine(HDC hdc, HPALETTE hPalette);
+void DestroyRoutine(HWND hwnd, HPALETTE hPalette);
 
 TCHAR szAppName [] = TEXT ("Pipes") ;
 TCHAR szTitle   [] = TEXT ("Pipes: Palette Animation Demo") ;

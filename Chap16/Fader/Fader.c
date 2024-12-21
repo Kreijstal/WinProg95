@@ -7,6 +7,12 @@
 
 #define ID_TIMER 1
 
+// Function prototypes
+HPALETTE CreateRoutine(HWND hwnd);
+void PaintRoutine(HDC hdc, int cxClient, int cyClient);
+void TimerRoutine(HDC hdc, HPALETTE hPalette);
+void DestroyRoutine(HWND hwnd, HPALETTE hPalette);
+
 TCHAR szAppName [] = TEXT ("Fader") ;
 TCHAR szTitle   [] = TEXT ("Fader: Palette Animation Demo") ;
 
