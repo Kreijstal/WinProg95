@@ -114,7 +114,7 @@ EXPORT BOOL CALLBACK DeleteStringW (PCWSTR pStringIn)
      return TRUE ;
 }
 
-EXPORT int CALLBACK GetStringsA (GETSTRCB pfnGetStrCallBack, PVOID pParam)
+EXPORT int CALLBACK GetStringsA (GETSTRPROCA pfnGetStrCallBack, PVOID pParam)
 {
      BOOL bReturn ;
      int  i, iLength ;
@@ -142,7 +142,7 @@ EXPORT int CALLBACK GetStringsA (GETSTRCB pfnGetStrCallBack, PVOID pParam)
      return iTotal ;
 }
 
-EXPORT int CALLBACK GetStringsW (GETSTRCB pfnGetStrCallBack, PVOID pParam)
+EXPORT int CALLBACK GetStringsW (GETSTRPROCW pfnGetStrCallBack, PVOID pParam)
 {
      BOOL bReturn ;
      int  i ;
