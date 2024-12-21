@@ -3,7 +3,7 @@
 all: head.exe
 
 head.exe: head.c
-	gcc head.c -o head.exe -Wall -mwindows
+	gcc head.c -o head.exe -Wall -mwindows -lcomctl32
 
 clean:
 	rm -f head.exe
