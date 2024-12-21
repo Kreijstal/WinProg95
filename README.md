@@ -7,7 +7,8 @@ Revisited C source code for Charles Petzold's Programming Windows 5th Edition IS
 2. Open MSYS2 MINGW64 shell (or UCRT64/CLANG64/MINGW32)
 3. Install required packages:
    ```bash
-   pacman -S --needed base-devel git mingw-w64-x86_64-toolchain
+   pacman -S --needed base-devel git
+   pacboy -S toolchain:p
    ```
 4. Clone and build:
    ```bash
