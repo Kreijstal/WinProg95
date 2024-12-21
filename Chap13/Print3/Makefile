@@ -8,8 +8,8 @@ OBJS = Print3.o Print.res ../FormFeed/GetPrnDC.o ../Print1/Print.o
 $(TARGET): $(OBJS)
 	$(CC) -o $(TARGET) $(OBJS) $(LIBS)
 
-Print.res: Print.rc Resource.h
-	$(RC) -O coff Print.rc -o Print.res
+%.res: %.rc Resource.h
+	$(RC) -O coff $< -o $@
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
