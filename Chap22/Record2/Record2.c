@@ -6,7 +6,7 @@
 #include <windows.h>
 #include "..\\record1\\resource.h"
 
-BOOL CALLBACK DlgProc (HWND, UINT, WPARAM, LPARAM) ;
+INT_PTR CALLBACK DlgProc (HWND, UINT, WPARAM, LPARAM) ;
 
 TCHAR szAppName [] = TEXT ("Record2") ;
 
@@ -31,7 +31,7 @@ void ShowError (HWND hwnd, DWORD dwError)
      MessageBox (hwnd, szErrorStr, szAppName, MB_OK | MB_ICONEXCLAMATION) ;
 }
 
-BOOL CALLBACK DlgProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
+INT_PTR CALLBACK DlgProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
      static BOOL       bRecording, bPlaying, bPaused ;
      static TCHAR      szFileName[] = TEXT ("record2.wav") ;
