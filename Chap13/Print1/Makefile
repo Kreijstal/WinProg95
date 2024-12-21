@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -mwindows
-LIBS = -lgdi32
+LIBS = -lgdi32 -lwinspool
 
 TARGET = Print1.exe
 OBJS = Print1.o Print.o ../FormFeed/GetPrnDC.o
