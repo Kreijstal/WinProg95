@@ -11,7 +11,7 @@
 #define UNTITLED TEXT ("(untitled)")
 
 LRESULT CALLBACK WndProc      (HWND, UINT, WPARAM, LPARAM) ;
-BOOL    CALLBACK AboutDlgProc (HWND, UINT, WPARAM, LPARAM) ;
+INT_PTR CALLBACK AboutDlgProc (HWND, UINT, WPARAM, LPARAM) ;
 
      // Functions in POPFILE.C
 
@@ -436,22 +436,22 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
      return DefWindowProc (hwnd, message, wParam, lParam) ;
 }
 
-BOOL CALLBACK AboutDlgProc (HWND hDlg, UINT message, 
+INT_PTR CALLBACK AboutDlgProc (HWND hDlg, UINT message, 
                             WPARAM wParam, LPARAM lParam)
 {
      switch (message)
      {
      case WM_INITDIALOG:
-          return TRUE ;
+          return (INT_PTR)TRUE ;
           
      case WM_COMMAND:
           switch (LOWORD (wParam))
           {
           case IDOK:
                EndDialog (hDlg, 0) ;
-               return TRUE ;
+               return (INT_PTR)TRUE ;
           }
           break ;
      }
-     return FALSE ;
+     return (INT_PTR)FALSE ;
 }
