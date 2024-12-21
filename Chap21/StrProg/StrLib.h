@@ -1,6 +1,11 @@
-/*----------------------
-   STRLIB.H header file
-  ----------------------*/
+#ifndef STRLIB_H
+#define STRLIB_H
+
+#include <windows.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #ifdef __cplusplus
 #define EXPORT extern "C" __declspec (dllexport)
@@ -8,34 +13,36 @@
 #define EXPORT __declspec (dllexport)
 #endif
 
-     // The maximum number of strings STRLIB will store and their lengths
-
+// The maximum number of strings STRLIB will store and their lengths
 #define MAX_STRINGS 256
 #define MAX_LENGTH  64
 
-     // The callback function type definition uses generic strings
+// Define callback function types
+typedef BOOL (CALLBACK *GETSTRPROCA)(PCSTR, PVOID);
+typedef BOOL (CALLBACK *GETSTRPROCW)(PCWSTR, PVOID);
 
-typedef BOOL (CALLBACK * GETSTRCB) (PCTSTR, PVOID) ;
-
-     // Each function has ANSI and Unicode versions
-
-EXPORT BOOL CALLBACK AddStringA (PCSTR) ;
-EXPORT BOOL CALLBACK AddStringW (PCWSTR) ;
-
-EXPORT BOOL CALLBACK DeleteStringA (PCSTR) ;
-EXPORT BOOL CALLBACK DeleteStringW (PCWSTR) ;
-
-EXPORT int CALLBACK GetStringsA (GETSTRCB, PVOID) ;
-EXPORT int CALLBACK GetStringsW (GETSTRCB, PVOID) ;
-
-     // Use the correct version depending on the UNICODE identifier
+// Function declarations
+EXPORT BOOL CALLBACK AddStringA(PCSTR);
+EXPORT BOOL CALLBACK AddStringW(PCWSTR);
+EXPORT BOOL CALLBACK DeleteStringA(PCSTR);
+EXPORT BOOL CALLBACK DeleteStringW(PCWSTR);
+EXPORT int CALLBACK GetStringsA(GETSTRPROCA, PVOID);
+EXPORT int CALLBACK GetStringsW(GETSTRPROCW, PVOID);
 
 #ifdef UNICODE
 #define AddString    AddStringW
 #define DeleteString DeleteStringW
 #define GetStrings   GetStringsW
+#define GETSTRPROC   GETSTRPROCW
 #else
 #define AddString    AddStringA
 #define DeleteString DeleteStringA
 #define GetStrings   GetStringsA
+#define GETSTRPROC   GETSTRPROCA
 #endif
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif // STRLIB_H

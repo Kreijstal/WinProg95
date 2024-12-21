@@ -16,3 +16,4 @@
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
+#define IDM_FILE_SAVE    1

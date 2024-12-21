@@ -1,5 +1,5 @@
 CFLAGS = -Wall -Wextra
-LDLIBS = -lgdi32
+LDLIBS = -lgdi32 -lcomdlg32
 RC = windres
 
 TARGET = EmfView
