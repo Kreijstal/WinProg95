@@ -45,8 +45,8 @@ HINSTANCE hInst ;
 HMENU     hMenuInit, hMenuHello, hMenuRect ;
 HMENU     hMenuInitWindow, hMenuHelloWindow, hMenuRectWindow ;
 
-int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance,
-                    PSTR szCmdLine, int iCmdShow)
+int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance __attribute__((unused)),
+                    PSTR szCmdLine __attribute__((unused)), int iCmdShow)
 {
      HACCEL   hAccel ;
      HWND     hwndFrame, hwndClient ;
@@ -274,7 +274,7 @@ LRESULT CALLBACK FrameWndProc (HWND hwnd, UINT message,
      return DefFrameProc (hwnd, hwndClient, message, wParam, lParam) ;
 }
 
-BOOL CALLBACK CloseEnumProc (HWND hwnd, LPARAM lParam)
+BOOL CALLBACK CloseEnumProc (HWND hwnd, LPARAM lParam __attribute__((unused)))
 {
      if (GetWindow (hwnd, GW_OWNER))         // Check for icon title
           return TRUE ;
@@ -311,7 +311,7 @@ LRESULT CALLBACK HelloWndProc (HWND hwnd, UINT message,
 
           pHelloData->iColor  = IDM_COLOR_BLACK ;
           pHelloData->clrText = RGB (0, 0, 0) ;
-          SetWindowLongPtr (hwnd, 0, (long) pHelloData) ;
+          SetWindowLongPtr (hwnd, 0, (LONG_PTR) pHelloData) ;
           
                // Save some window handles
           
@@ -419,7 +419,7 @@ LRESULT CALLBACK RectWndProc (HWND hwnd, UINT message,
           pRectData = (PRECTDATA) HeapAlloc (GetProcessHeap (),
                                    HEAP_ZERO_MEMORY, sizeof (RECTDATA)) ;
           
-          SetWindowLongPtr (hwnd, 0, (long) pRectData) ;
+          SetWindowLongPtr (hwnd, 0, (LONG_PTR) pRectData) ;
           
                // Start the timer going
           

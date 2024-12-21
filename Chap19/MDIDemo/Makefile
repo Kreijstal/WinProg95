@@ -18,7 +18,7 @@ $(PROGRAM): $(OBJECTS)
 $(PROGRAM)_res.o: $(RES)
 	windres $< $@
 
-%.res: %.rc resource.h
+%.res: %.rc Resource.h
 	$(RC) $< -O coff -o $@
 
 clean:
