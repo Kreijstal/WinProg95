@@ -1,7 +1,7 @@
 PROG = ClipText.exe
 SOURCES = ClipText.c
 RESOURCES = ClipText.rc
-OBJS = ClipText.o ClipText_rc.o
+OBJS = ClipText.o ClipText.res
 
 CFLAGS = -mwindows -I. -DUNICODE -D_UNICODE
 LDFLAGS = -mwindows -municode
@@ -12,8 +12,8 @@ $(PROG): $(OBJS)
 ClipText.o: ClipText.c Resource.h
 	$(CC) -c $(CFLAGS) $<
 
-ClipText_rc.o: $(RESOURCES) Resource.h
-	$(RC) -I. -i $< -o $@
+%.res: %.rc Resource.h
+	$(RC) -I. $< -O coff -o $@
 
 clean:
 	rm -f $(PROG) $(OBJS)
