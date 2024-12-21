@@ -9,7 +9,7 @@ $(TARGET): $(OBJS)
 	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LDLIBS)
 
 NetTime_rc.o: NetTime.rc
-	windres -O coff NetTime.rc NetTime_rc.o
+	$(RC) -O coff NetTime.rc NetTime_rc.o
 
 clean:
 	rm -f $(TARGET) $(OBJS)
