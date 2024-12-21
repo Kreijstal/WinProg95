@@ -1,9 +1,13 @@
+CFLAGS = -Wall
+LDFLAGS = -mwindows 
+LDLIBS = -lcomctl32
+
 .PHONY: all clean
 
-all: head.exe
+all: Head.exe
 
-head.exe: head.c
-	cc head.c -o head.exe -Wall -mwindows -lcomctl32
+Head.exe: Head.o
+	$(CC) $(LDFLAGS) -o $@ $^ $(LDLIBS)
 
 clean:
-	rm -f head.exe
+	rm -f Head.exe Head.o
