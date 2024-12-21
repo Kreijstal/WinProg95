@@ -1,7 +1,7 @@
 PROG = Record2.exe
 OBJS = Record2.o
 
-CFLAGS = -Wall
+CFLAGS = -Wall -I../Record1
 LDFLAGS = -mwindows
 LDLIBS = -lwinmm
 
