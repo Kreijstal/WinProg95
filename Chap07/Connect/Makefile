@@ -1,5 +1,5 @@
 CC = cc
 CFLAGS = -o $@ -Wall -mwindows
 
-connect.exe: connect.c
-	$(CC) connect.c $(CFLAGS)
+Connect.exe: Connect.c
+	$(CC) Connect.c $(CFLAGS)
