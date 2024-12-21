@@ -36,7 +36,7 @@ $(TARGET): $(OBJS)
 
 # Resource compilation
 %.res: %.rc $(HEADERS)
-	$(RC) $< -o $@
+	$(RC) -O coff $< -o $@
 
 # Clean rule
 clean:
