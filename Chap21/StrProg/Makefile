@@ -1,6 +1,6 @@
 CC = gcc
 RC = windres
-CFLAGS = -Wall -shared
+CFLAGS = -Wall -shared -D_UNICODE -DUNICODE
 TARGET = StrLib.dll
 SRCS = StrLib.c
 OBJS = $(SRCS:.c=.o)

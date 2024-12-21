@@ -1,5 +1,6 @@
 CC = gcc
-CFLAGS = -Wall -shared
+CFLAGS = -Wall -shared 
+LIBS = -lgdi32
 TARGET = EdrLib.dll
 SRCS = EdrLib.c
 OBJS = $(SRCS:.c=.o)
@@ -11,7 +12,7 @@ TEST_OBJS = $(TEST_SRCS:.c=.o)
 all: $(TARGET) $(TEST_TARGET)
 
 $(TARGET): $(OBJS)
-	$(CC) $(OBJS) -o $(TARGET) $(CFLAGS)
+	$(CC) $(OBJS) -o $(TARGET) $(CFLAGS) $(LIBS)
 
 $(TEST_TARGET): $(TEST_OBJS) $(TARGET)
 	$(CC) $(TEST_OBJS) -L. -lEdrLib -o $(TEST_TARGET) -mwindows
