@@ -4,7 +4,7 @@
   --------------------------------------------------*/
 
 #include <windows.h>
-#include "../ShowDib3/PackeDib.h"
+#include "PackeDib.h"
 #include "Resource.h"
 
 LRESULT CALLBACK WndProc (HWND, UINT, WPARAM, LPARAM) ;
@@ -63,7 +63,7 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
      static TCHAR        szFileName [MAX_PATH], szTitleName [MAX_PATH] ;
      static TCHAR        szFilter[] = TEXT ("Bitmap Files (*.BMP)\0*.bmp\0")
                                       TEXT ("All Files (*.*)\0*.*\0\0") ;
-     BITMAP              bitmap ;
+     BITMAP              Bitmap ;
      BITMAPINFO        * pPackedDib ;
      HDC                 hdc, hdcMem ;
      PAINTSTRUCT         ps ;
@@ -178,12 +178,12 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
           }
           if (hBitmap)
           {
-               GetObject (hBitmap, sizeof (BITMAP), &bitmap) ;
+               GetObject (hBitmap, sizeof (BITMAP), &Bitmap) ;
 
                hdcMem = CreateCompatibleDC (hdc) ;
                SelectObject (hdcMem, hBitmap) ;
 
-               BitBlt (hdc,    0, 0, bitmap.bmWidth, bitmap.bmHeight, 
+               BitBlt (hdc,    0, 0, Bitmap.bmWidth, Bitmap.bmHeight, 
                        hdcMem, 0, 0, SRCCOPY) ;
 
                DeleteDC (hdcMem) ;

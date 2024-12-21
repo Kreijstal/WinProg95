@@ -5,7 +5,7 @@
 
 #define WINVER 0x0500
 #include <windows.h>
-#include "dibhelp.h"
+#include "DibHelp.h"
 
 #define HDIB_SIGNATURE (* (int *) "Dib ")
 
@@ -42,7 +42,7 @@ BOOL DibIsValid (HDIB hdib)
 }
 
 /*-----------------------------------------------------------------------
-   DibBitmapHandle:  Returns the handle to the DIB section bitmap object
+   DibBitmapHandle:  Returns the handle to the DIB section Bitmap object
   -----------------------------------------------------------------------*/
 
 HBITMAP DibBitmapHandle (HDIB hdib)
@@ -54,7 +54,7 @@ HBITMAP DibBitmapHandle (HDIB hdib)
 }
 
 /*-------------------------------------------
-   DibWidth:  Returns the bitmap pixel width
+   DibWidth:  Returns the Bitmap pixel width
   -------------------------------------------*/
 
 int DibWidth (HDIB hdib)
@@ -66,7 +66,7 @@ int DibWidth (HDIB hdib)
 }
 
 /*---------------------------------------------
-   DibHeight:  Returns the bitmap pixel height
+   DibHeight:  Returns the Bitmap pixel height
   ---------------------------------------------*/
 
 int DibHeight (HDIB hdib)

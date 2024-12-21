@@ -6,7 +6,7 @@
 #include <stdlib.h>  // for _countof()
 #include <windows.h>
 #include <windowsx.h>
-#include "../../Chap04/SysMets1/SysMets.h"
+#include "SysMets.h"
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 

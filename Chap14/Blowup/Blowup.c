@@ -5,7 +5,7 @@
 
 #include <windows.h>
 #include <stdlib.h>      // for abs definition
-#include "resource.h"
+#include "Resource.h"
 
 LRESULT CALLBACK WndProc (HWND, UINT, WPARAM, LPARAM) ;
 
@@ -72,12 +72,12 @@ void InvertBlock (HWND hwndScr, HWND hwnd, POINT ptBeg, POINT ptEnd)
 
 HBITMAP CopyBitmap (HBITMAP hBitmapSrc)
 {
-     BITMAP  bitmap ;
+     BITMAP  Bitmap ;
      HBITMAP hBitmapDst ;
      HDC     hdcSrc, hdcDst ;
 
-     GetObject (hBitmapSrc, sizeof (BITMAP), &bitmap) ;
-     hBitmapDst = CreateBitmapIndirect (&bitmap) ;
+     GetObject (hBitmapSrc, sizeof (BITMAP), &Bitmap) ;
+     hBitmapDst = CreateBitmapIndirect (&Bitmap) ;
 
      hdcSrc = CreateCompatibleDC (NULL) ;
      hdcDst = CreateCompatibleDC (NULL) ;
@@ -85,7 +85,7 @@ HBITMAP CopyBitmap (HBITMAP hBitmapSrc)
      SelectObject (hdcSrc, hBitmapSrc) ;
      SelectObject (hdcDst, hBitmapDst) ;
 
-     BitBlt (hdcDst, 0, 0, bitmap.bmWidth, bitmap.bmHeight,
+     BitBlt (hdcDst, 0, 0, Bitmap.bmWidth, Bitmap.bmHeight,
              hdcSrc, 0, 0, SRCCOPY) ;
 
      DeleteDC (hdcSrc) ;

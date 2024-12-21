@@ -4,7 +4,7 @@
   ----------------------------------------*/
 
 #include <windows.h>
-#include "resource.h"
+#include "Resource.h"
 
 #define INP_BUFFER_SIZE 16384
 

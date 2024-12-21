@@ -8,8 +8,8 @@
 #define WIN32_LEAN_AND_MEAN
 #undef NOUSER
 
-#include <Windows.h>
-#include <CommCtrl.h>
+#include <windows.h>
+#include <commctrl.h>
 #include <windowsx.h>
 
 

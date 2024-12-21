@@ -5,7 +5,7 @@
 
 #include <windows.h>
 #include <wchar.h>       // for wide-character string functions
-#include "strlib.h"
+#include "StrLib.h"
 
      // shared memory section (requires /SECTION:shared,RWS in link options)
 

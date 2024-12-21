@@ -54,7 +54,7 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
      static HBITMAP hBitmap ;
      static int     cxClient, cyClient, cxSource, cySource ;
-     BITMAP         bitmap ;
+     BITMAP         Bitmap ;
      HDC            hdc, hdcMem ;
      HINSTANCE      hInstance ;
      int            x, y ;
@@ -67,10 +67,10 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 
           hBitmap = LoadBitmap (hInstance, TEXT ("Bricks")) ;
 
-          GetObject (hBitmap, sizeof (BITMAP), &bitmap) ;
+          GetObject (hBitmap, sizeof (BITMAP), &Bitmap) ;
 
-          cxSource = bitmap.bmWidth ;
-          cySource = bitmap.bmHeight ;
+          cxSource = Bitmap.bmWidth ;
+          cySource = Bitmap.bmHeight ;
 
           return 0 ;
 

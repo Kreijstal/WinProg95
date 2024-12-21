@@ -52,7 +52,7 @@ int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
 LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
-     static BITMAP  bitmap = { 0, 8, 8, 2, 1, 1 } ;
+     static BITMAP  Bitmap = { 0, 8, 8, 2, 1, 1 } ;
      static BYTE    bits [8][2] = { 0xFF, 0, 0x0C, 0, 0x0C, 0, 0x0C, 0,
                                     0xFF, 0, 0xC0, 0, 0xC0, 0, 0xC0, 0 } ;
      static HBITMAP hBitmap ;
@@ -64,10 +64,10 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
      switch (message)
      {
      case WM_CREATE:
-          bitmap.bmBits = bits ;
-          hBitmap = CreateBitmapIndirect (&bitmap) ;
-          cxSource = bitmap.bmWidth ;
-          cySource = bitmap.bmHeight ;
+          Bitmap.bmBits = bits ;
+          hBitmap = CreateBitmapIndirect (&Bitmap) ;
+          cxSource = Bitmap.bmWidth ;
+          cySource = Bitmap.bmHeight ;
           return 0 ;
 
      case WM_SIZE:

@@ -4,7 +4,7 @@
   ----------------------------------------*/
 
 #include <windows.h>
-#include "..\\record1\\resource.h"
+#include "Resource.h"
 
 INT_PTR CALLBACK DlgProc (HWND, UINT, WPARAM, LPARAM) ;
 

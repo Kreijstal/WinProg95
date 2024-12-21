@@ -14,7 +14,7 @@ all: $(PROGRAM)
 $(PROGRAM): $(OBJECTS)
 	$(CC) -o $@ $(OBJECTS) $(LDLIBS)
 
-$(PROGRAM)_res.o: $(PROGRAM).rc resource.h
+$(PROGRAM)_res.o: $(PROGRAM).rc Resource.h
 	$(RC) -I. $< -O coff -o $@
 
 clean:

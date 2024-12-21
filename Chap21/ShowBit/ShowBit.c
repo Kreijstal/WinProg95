@@ -1,5 +1,5 @@
 /*-----------------------------------------------------------
-   SHOWBIT.C -- Shows bitmaps in BITLIB dynamic-link library
+   SHOWBIT.C -- Shows Bitmaps in BITLIB dynamic-link library
                 (c) Charles Petzold, 1998
   -----------------------------------------------------------*/
 

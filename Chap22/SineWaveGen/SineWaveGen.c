@@ -5,7 +5,7 @@
 
 #include <windows.h>
 #include <math.h>
-#include "resource.h"
+#include "Resource.h"
 
 #define SAMPLE_RATE     11025
 #define FREQ_MIN           20

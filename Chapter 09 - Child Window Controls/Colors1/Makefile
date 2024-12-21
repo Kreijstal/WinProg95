@@ -5,13 +5,10 @@ LDFLAGS = -mwindows
 LDLIBS = -lcomctl32
 
 TARGET = Colors1.exe
-OBJS = Colors1.o Colors1.res
+OBJS = Colors1.o 
 
 $(TARGET): $(OBJS)
 	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LDLIBS)
-
-%.res: %.rc
-	$(RC) $< -O coff -o $@
 
 clean:
 	rm -f $(TARGET) $(OBJS)

@@ -1,6 +1,6 @@
 //Microsoft Developer Studio generated resource script.
 //
-#include "resource.h"
+#include "Resource.h"
 
 #define APSTUDIO_READONLY_SYMBOLS
 /////////////////////////////////////////////////////////////////////////////
@@ -29,7 +29,7 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 
 1 TEXTINCLUDE DISCARDABLE 
 BEGIN
-    "resource.h\0"
+    "Resource.h\0"
 END
 
 2 TEXTINCLUDE DISCARDABLE 
@@ -54,14 +54,14 @@ END
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-POPPAD2                 ICON    DISCARDABLE     "poppad2.ico"
+PopPad2                 ICON    DISCARDABLE     "PopPad2.ico"
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // Menu
 //
 
-POPPAD2 MENU DISCARDABLE 
+PopPad2 MENU DISCARDABLE 
 BEGIN
     POPUP "&File"
     BEGIN
@@ -98,7 +98,7 @@ END
 // Accelerator
 //
 
-POPPAD2 ACCELERATORS DISCARDABLE 
+PopPad2 ACCELERATORS DISCARDABLE 
 BEGIN
     VK_BACK,        IDM_EDIT_UNDO,          VIRTKEY, ALT, NOINVERT
     VK_DELETE,      IDM_EDIT_CLEAR,         VIRTKEY, NOINVERT

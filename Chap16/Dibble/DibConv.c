@@ -5,9 +5,9 @@
 
 // #define WINVER 0x0500              // eventually remove
 #include <windows.h>
-#include "dibhelp.h"
-#include "dibpal.h"
-#include "dibconv.h"
+#include "DibHelp.h"
+#include "DibPal.h"
+#include "DibConv.h"
 
 HDIB DibConvert (HDIB hdibSrc, int iBitCountDst)
 {

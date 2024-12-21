@@ -4,10 +4,10 @@
   ----------------------------------------*/
 
 #include <windows.h>
-#include "dibhelp.h"
-#include "dibpal.h"
-#include "dibconv.h"
-#include "resource.h"
+#include "DibHelp.h"
+#include "DibPal.h"
+#include "DibConv.h"
+#include "Resource.h"
 
 #define WM_USER_SETSCROLLS    (WM_USER + 1)
 #define WM_USER_DELETEDIB     (WM_USER + 2)
@@ -75,13 +75,13 @@ int DisplayDib (HDC hdc, HBITMAP hBitmap, int x, int y,
                 int cxClient, int cyClient, 
                 WORD wShow, BOOL fHalftonePalette)
 {
-     BITMAP bitmap ;
+     BITMAP Bitmap ;
      HDC    hdcMem ; 
      int    cxBitmap, cyBitmap, iReturn ;
 
-     GetObject (hBitmap, sizeof (BITMAP), &bitmap) ;
-     cxBitmap = bitmap.bmWidth ;
-     cyBitmap = bitmap.bmHeight ;
+     GetObject (hBitmap, sizeof (BITMAP), &Bitmap) ;
+     cxBitmap = Bitmap.bmWidth ;
+     cyBitmap = Bitmap.bmHeight ;
 
      SaveDC (hdc) ;
 
@@ -582,12 +582,12 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
                                 szAppName, MB_ICONEXCLAMATION | MB_OK) ;
                     return 0 ;
                }
-                    // Check if the printer can print bitmaps
+                    // Check if the printer can print Bitmaps
 
                if (!(RC_BITBLT & GetDeviceCaps (hdcPrn, RASTERCAPS)))
                {
                     DeleteDC (hdcPrn) ;
-                    MessageBox (hwnd, TEXT ("Printer cannot print bitmaps"),
+                    MessageBox (hwnd, TEXT ("Printer cannot print Bitmaps"),
                                 szAppName, MB_ICONEXCLAMATION | MB_OK) ;
                     return 0 ;
                }
@@ -620,7 +620,7 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
                DeleteDC (hdcPrn) ;
 
                if (!fSuccess)
-                    MessageBox (hwnd, TEXT ("Could not print bitmap"),
+                    MessageBox (hwnd, TEXT ("Could not print Bitmap"),
                                 szAppName, MB_ICONEXCLAMATION | MB_OK) ;
                return 0 ;
 

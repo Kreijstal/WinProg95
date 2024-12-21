@@ -6,7 +6,7 @@
 #include <windows.h>
 #include <wininet.h>
 #include <process.h>
-#include "resource.h"
+#include "Resource.h"
 
      // User-defined messages used in WndProc
 

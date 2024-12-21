@@ -5,8 +5,8 @@
 
 #include <windows.h>
 #include <commdlg.h>
-#include "drumtime.h"
-#include "drumfile.h"
+#include "DrumTime.h"
+#include "DrumFile.h"
 
 OPENFILENAME ofn = { sizeof (OPENFILENAME) } ;
 

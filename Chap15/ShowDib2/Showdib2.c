@@ -4,8 +4,8 @@
   ----------------------------------------------*/
 
 #include <windows.h>
-#include "dibfile.h"
-#include "resource.h"
+#include "DibFile.h"
+#include "Resource.h"
 
 LRESULT CALLBACK WndProc (HWND, UINT, WPARAM, LPARAM) ;
 
@@ -236,12 +236,12 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
                                 szAppName, MB_ICONEXCLAMATION | MB_OK) ;
                     return 0 ;
                }
-                    // Check if the printer can print bitmaps
+                    // Check if the printer can print Bitmaps
 
                if (!(RC_BITBLT & GetDeviceCaps (hdcPrn, RASTERCAPS)))
                {
                     DeleteDC (hdcPrn) ;
-                    MessageBox (hwnd, TEXT ("Printer cannot print bitmaps"),
+                    MessageBox (hwnd, TEXT ("Printer cannot print Bitmaps"),
                                 szAppName, MB_ICONEXCLAMATION | MB_OK) ;
                     return 0 ;
                }
@@ -274,7 +274,7 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
                DeleteDC (hdcPrn) ;
 
                if (!bSuccess)
-                    MessageBox (hwnd, TEXT ("Could not print bitmap"),
+                    MessageBox (hwnd, TEXT ("Could not print Bitmap"),
                                 szAppName, MB_ICONEXCLAMATION | MB_OK) ;
                return 0 ;
 

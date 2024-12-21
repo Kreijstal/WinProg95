@@ -7,9 +7,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-#include "drumtime.h"
-#include "drumfile.h"
-#include "resource.h"
+#include "DrumTime.h"
+#include "DrumFile.h"
+#include "Resource.h"
 
 LRESULT CALLBACK WndProc   (HWND, UINT, WPARAM, LPARAM) ;
 INT_PTR CALLBACK AboutProc (HWND, UINT, WPARAM, LPARAM) ;

@@ -41,7 +41,7 @@ int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
      if (hwnd == NULL)
      {
-          MessageBox (NULL, TEXT ("Not enough memory to create bitmap!"),
+          MessageBox (NULL, TEXT ("Not enough memory to create Bitmap!"),
                       szAppName, MB_ICONERROR) ;
           return 0 ;
      }
@@ -93,7 +93,7 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
           hdcMem  = CreateCompatibleDC (hdc) ;
           ReleaseDC (hwnd, hdc) ;
 
-          if (!hBitmap)       // no memory for bitmap
+          if (!hBitmap)       // no memory for Bitmap
           {
                DeleteDC (hdcMem) ;
                return -1 ;

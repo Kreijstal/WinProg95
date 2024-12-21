@@ -154,7 +154,7 @@
     <ClCompile Include="PopPad2.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="resource.h" />
+    <ClInclude Include="Resource.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="PopPad2.ico" />

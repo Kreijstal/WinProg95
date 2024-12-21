@@ -4,7 +4,7 @@
   --------------------------------------------------------*/
 
 #include <windows.h>
-#include "edrlib.h"
+#include "EdrLib.h"
 
 LRESULT CALLBACK WndProc (HWND, UINT, WPARAM, LPARAM) ;
 

@@ -1,10 +1,10 @@
 /*-------------------------------------------
-   POEPOEM.C -- Demonstrates Custom Resource
+   PoePoem.C -- Demonstrates Custom Resource
                 (c) Charles Petzold, 1998
   -------------------------------------------*/
 
 #include <windows.h>
-#include "resource.h"
+#include "Resource.h"
 
 LRESULT CALLBACK WndProc (HWND, UINT, WPARAM, LPARAM) ;
 

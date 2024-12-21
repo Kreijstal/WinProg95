@@ -4,7 +4,7 @@
   --------------------------------------------------------*/
 
 #include <windows.h>
-#include "resource.h"
+#include "Resource.h"
 
 #define INIT_MENU_POS    0
 #define HELLO_MENU_POS   2

@@ -4,7 +4,7 @@
   -----------------------------------------*/
 
 #include <windows.h>
-#include "drumtime.h"
+#include "DrumTime.h"
 
 #define minmax(a,x,b) (min (max (x, a), b))
 

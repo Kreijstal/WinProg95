@@ -5,8 +5,8 @@
 
 #include <windows.h>
 #include <math.h>
-#include "addsynth.h"
-#include "resource.h"
+#include "AddSynth.h"
+#include "Resource.h"
 
 #define ID_TIMER             1
 #define SAMPLE_RATE      22050

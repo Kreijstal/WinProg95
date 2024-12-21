@@ -4,7 +4,7 @@
 ------------------------------------------------------------------*/
 
 #include <windows.h>
-#include "resource.h"
+#include "Resource.h"
 
 LRESULT CALLBACK WndProc (HWND, UINT, WPARAM, LPARAM) ;
 void DoBasicInfo    (HDC, HDC, int, int) ;
@@ -289,11 +289,11 @@ void DoOtherInfo (HDC hdc, HDC hdcInfo, int cxChar, int cyChar)
           RC_BITBLT,       TEXT ("RC_BITBLT       Capable of simple BitBlt:"),
           RC_BANDING,      TEXT ("RC_BANDING      Requires banding support:"),
           RC_SCALING,      TEXT ("RC_SCALING      Requires scaling support:"),
-          RC_BITMAP64,     TEXT ("RC_BITMAP64     Supports bitmaps >64K:"),
+          RC_BITMAP64,     TEXT ("RC_BITMAP64     Supports Bitmaps >64K:"),
           RC_GDI20_OUTPUT, TEXT ("RC_GDI20_OUTPUT Has 2.0 output calls:"),
           RC_DI_BITMAP,    TEXT ("RC_DI_BITMAP    Supports DIB to memory:"),
           RC_PALETTE,      TEXT ("RC_PALETTE      Supports a palette:"),
-          RC_DIBTODEV,     TEXT ("RC_DIBTODEV     Supports bitmap conversion:"),
+          RC_DIBTODEV,     TEXT ("RC_DIBTODEV     Supports Bitmap conversion:"),
           RC_BIGFONT,      TEXT ("RC_BIGFONT      Supports fonts >64K:"),
           RC_STRETCHBLT,   TEXT ("RC_STRETCHBLT   Supports StretchBlt:"),
           RC_FLOODFILL,    TEXT ("RC_FLOODFILL    Supports FloodFill:"),

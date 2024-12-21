@@ -9,7 +9,7 @@
 #undef NOUSER
 
 #include <windows.h>
-#include <CommCtrl.h>
+#include <commctrl.h>
 #include <windowsx.h>
 
 

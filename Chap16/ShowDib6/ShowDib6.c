@@ -4,7 +4,7 @@
   ------------------------------------------------*/
 
 #include <windows.h>
-#include "../ShowDib3/PackeDib.h"
+#include "PackeDib.h"
 #include "Resource.h"
 
 LRESULT CALLBACK WndProc (HWND, UINT, WPARAM, LPARAM) ;

@@ -4,7 +4,7 @@
   ----------------------------------------------*/
 
 #include <windows.h>
-#include "resource.h"
+#include "Resource.h"
 
 LRESULT CALLBACK WndProc (HWND, UINT, WPARAM, LPARAM) ;
 void    AddHelpToSys     (HINSTANCE, HWND) ;
@@ -116,7 +116,7 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 }
 
 /*----------------------------------------------------
-   AddHelpToSys: Adds bitmap Help item to system menu
+   AddHelpToSys: Adds Bitmap Help item to system menu
   ----------------------------------------------------*/
 
 void AddHelpToSys (HINSTANCE hInstance, HWND hwnd)
@@ -168,7 +168,7 @@ HMENU CreateMyMenu (HINSTANCE hInstance)
 }
 
 /*----------------------------------------------------
-   StretchBitmap: Scales bitmap to display resolution
+   StretchBitmap: Scales Bitmap to display resolution
   ----------------------------------------------------*/
 
 HBITMAP StretchBitmap (HBITMAP hBitmap1)
@@ -190,7 +190,7 @@ HBITMAP StretchBitmap (HBITMAP hBitmap1)
      hdcMem2 = CreateCompatibleDC (hdc) ;
      DeleteDC (hdc) ;
 
-          // Get the dimensions of the bitmap to be stretched
+          // Get the dimensions of the Bitmap to be stretched
      
      GetObject (hBitmap1, sizeof (BITMAP), (PTSTR) &bm1) ;
 
@@ -201,11 +201,11 @@ HBITMAP StretchBitmap (HBITMAP hBitmap1)
      bm2.bmHeight     = (cyChar * bm2.bmHeight) / 8 ;
      bm2.bmWidthBytes = ((bm2.bmWidth + 15) / 16) * 2 ;
 
-          // Create a new bitmap of larger size
+          // Create a new Bitmap of larger size
      
      hBitmap2 = CreateBitmapIndirect (&bm2) ;
 
-          // Select the bitmaps in the memory DCs and do a StretchBlt
+          // Select the Bitmaps in the memory DCs and do a StretchBlt
      
      SelectObject (hdcMem1, hBitmap1) ;
      SelectObject (hdcMem2, hBitmap2) ;
@@ -223,7 +223,7 @@ HBITMAP StretchBitmap (HBITMAP hBitmap1)
 }
 
 /*------------------------------------------------
-   GetBitmapFont: Creates bitmaps with font names
+   GetBitmapFont: Creates Bitmaps with font names
   ------------------------------------------------*/
 
 HBITMAP GetBitmapFont (int i)
@@ -260,7 +260,7 @@ HBITMAP GetBitmapFont (int i)
 }
 
 /*------------------------------------------------------- 
-   DeleteAllBitmaps: Deletes all the bitmaps in the menu
+   DeleteAllBitmaps: Deletes all the Bitmaps in the menu
   -------------------------------------------------------*/
 
 void DeleteAllBitmaps (HWND hwnd)
@@ -269,13 +269,13 @@ void DeleteAllBitmaps (HWND hwnd)
      int          i ;
      MENUITEMINFO mii = { sizeof (MENUITEMINFO), MIIM_SUBMENU | MIIM_TYPE } ;
 
-          // Delete Help bitmap on system menu
+          // Delete Help Bitmap on system menu
 
      hMenu = GetSystemMenu (hwnd, FALSE);
      GetMenuItemInfo (hMenu, IDM_HELP, FALSE, &mii) ;
      DeleteObject ((HBITMAP) mii.dwTypeData) ;
 
-          // Delete top-level menu bitmaps
+          // Delete top-level menu Bitmaps
 
      hMenu = GetMenu (hwnd) ;
 
@@ -285,7 +285,7 @@ void DeleteAllBitmaps (HWND hwnd)
           DeleteObject ((HBITMAP) mii.dwTypeData) ;
      }
 
-          // Delete bitmap items on Font menu
+          // Delete Bitmap items on Font menu
 
      hMenu = mii.hSubMenu ;;
 

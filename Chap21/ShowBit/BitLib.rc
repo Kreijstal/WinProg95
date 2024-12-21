@@ -1,6 +1,6 @@
 //Microsoft Developer Studio generated resource script.
 //
-#include "resource.h"
+#include "Resource.h"
 
 #define APSTUDIO_READONLY_SYMBOLS
 /////////////////////////////////////////////////////////////////////////////
@@ -29,7 +29,7 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 
 1 TEXTINCLUDE DISCARDABLE 
 BEGIN
-    "resource.h\0"
+    "Resource.h\0"
 END
 
 2 TEXTINCLUDE DISCARDABLE 
@@ -52,15 +52,15 @@ END
 // Bitmap
 //
 
-1                       BITMAP  DISCARDABLE     "bitmap1.bmp"
-2                       BITMAP  DISCARDABLE     "bitmap2.bmp"
-3                       BITMAP  DISCARDABLE     "bitmap3.bmp"
-4                       BITMAP  DISCARDABLE     "bitmap4.bmp"
-5                       BITMAP  DISCARDABLE     "bitmap5.bmp"
-6                       BITMAP  DISCARDABLE     "bitmap6.bmp"
-7                       BITMAP  DISCARDABLE     "bitmap7.bmp"
-8                       BITMAP  DISCARDABLE     "bitmap8.bmp"
-9                       BITMAP  DISCARDABLE     "bitmap9.bmp"
+1                       BITMAP  DISCARDABLE     "Bitmap1.bmp"
+2                       BITMAP  DISCARDABLE     "Bitmap2.bmp"
+3                       BITMAP  DISCARDABLE     "Bitmap3.bmp"
+4                       BITMAP  DISCARDABLE     "Bitmap4.bmp"
+5                       BITMAP  DISCARDABLE     "Bitmap5.bmp"
+6                       BITMAP  DISCARDABLE     "Bitmap6.bmp"
+7                       BITMAP  DISCARDABLE     "Bitmap7.bmp"
+8                       BITMAP  DISCARDABLE     "Bitmap8.bmp"
+9                       BITMAP  DISCARDABLE     "Bitmap9.bmp"
 #endif    // English (U.S.) resources
 /////////////////////////////////////////////////////////////////////////////
 

@@ -4,8 +4,8 @@
   ------------------------------------------------*/
 
 #include <windows.h>
-#include "../EZTest/EzFont.h"
-#include "../EZTest/Resource.h"
+#include "EZFont.h"
+#include "Resource.h"
 
 extern  void     PaintRoutine (HWND, HDC, int, int) ;
 LRESULT CALLBACK WndProc (HWND, UINT, WPARAM, LPARAM) ;

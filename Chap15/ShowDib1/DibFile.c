@@ -4,7 +4,7 @@
 
 #include <windows.h>
 #include <commdlg.h>
-#include "dibfile.h"
+#include "DibFile.h"
 
 static OPENFILENAME ofn ;
 

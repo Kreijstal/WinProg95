@@ -5,7 +5,7 @@
 
 #include <windows.h>
 #include <commdlg.h>
-#include "resource.h"
+#include "Resource.h"
 
 #define EDITID   1
 #define UNTITLED TEXT ("(untitled)")

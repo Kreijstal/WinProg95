@@ -4,8 +4,8 @@
   --------------------------------------------------------*/
 
 #include <windows.h>
-#include "strlib.h"
-#include "resource.h"
+#include "StrLib.h"
+#include "Resource.h"
 
 typedef struct
 {

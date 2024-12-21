@@ -4,7 +4,7 @@
   -------------------------------------------------*/
 
 #include <windows.h>
-#include "edrlib.h"
+#include "EdrLib.h"
 
 int WINAPI DllMain (HINSTANCE hInstance, DWORD fdwReason, PVOID pvReserved)
 {

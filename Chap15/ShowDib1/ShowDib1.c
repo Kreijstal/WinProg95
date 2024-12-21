@@ -4,8 +4,8 @@
   ----------------------------------------------*/
 
 #include <windows.h>
-#include "dibfile.h"
-#include "resource.h"
+#include "DibFile.h"
+#include "Resource.h"
 
 LRESULT CALLBACK WndProc (HWND, UINT, WPARAM, LPARAM) ;
 

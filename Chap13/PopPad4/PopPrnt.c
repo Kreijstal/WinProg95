@@ -4,7 +4,7 @@
 
 #include <windows.h>
 #include <commdlg.h>
-#include "resource.h"
+#include "Resource.h"
 
 BOOL bUserAbort ;
 HWND hDlgPrint ;

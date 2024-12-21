@@ -4,7 +4,7 @@
   -----------------------------------------*/
 
 #include <windows.h>
-#include "resource.h"
+#include "Resource.h"
 
 #define OUTWIDTH 6       // Width of formatted output in inches
 #define LASTCHAR 127     // Last character code used in text

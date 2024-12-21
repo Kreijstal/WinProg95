@@ -55,7 +55,7 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
      static HBITMAP   hBitmapImag, hBitmapMask ;
      static HINSTANCE hInstance ;
      static int       cxClient, cyClient, cxBitmap, cyBitmap ;
-     BITMAP           bitmap ;
+     BITMAP           Bitmap ;
      HDC              hdc, hdcMemImag, hdcMemMask ;
      int              x, y ;
      PAINTSTRUCT      ps ;
@@ -68,22 +68,22 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
                // Load the original image and get its size
 
           hBitmapImag = LoadBitmap (hInstance, TEXT ("Matthew")) ;
-          GetObject (hBitmapImag, sizeof (BITMAP), &bitmap) ;
-          cxBitmap = bitmap.bmWidth ;
-          cyBitmap = bitmap.bmHeight ;
+          GetObject (hBitmapImag, sizeof (BITMAP), &Bitmap) ;
+          cxBitmap = Bitmap.bmWidth ;
+          cyBitmap = Bitmap.bmHeight ;
 
                // Select the original image into a memory DC
 
           hdcMemImag  = CreateCompatibleDC (NULL) ;
           SelectObject (hdcMemImag, hBitmapImag) ;
 
-               // Create the monochrome mask bitmap and memory DC
+               // Create the monochrome mask Bitmap and memory DC
 
           hBitmapMask = CreateBitmap (cxBitmap, cyBitmap, 1, 1, NULL) ;
           hdcMemMask = CreateCompatibleDC (NULL) ;
           SelectObject (hdcMemMask, hBitmapMask) ;
 
-               // Color the mask bitmap black with a white ellipse
+               // Color the mask Bitmap black with a white ellipse
           
           SelectObject (hdcMemMask, GetStockObject (BLACK_BRUSH)) ;
           Rectangle (hdcMemMask, 0, 0, cxBitmap, cyBitmap) ;
@@ -107,7 +107,7 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
      case WM_PAINT:
           hdc = BeginPaint (hwnd, &ps) ;
 
-               // Select bitmaps into memory DCs
+               // Select Bitmaps into memory DCs
 
           hdcMemImag = CreateCompatibleDC (hdc) ;
           SelectObject (hdcMemImag, hBitmapImag) ;

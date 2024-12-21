@@ -1,10 +1,10 @@
 /*-----------------------------------------------------
-   POPPAD2.C -- Popup Editor Version 2 (includes menu)
+   PopPad2.C -- Popup Editor Version 2 (includes menu)
                 (c) Charles Petzold, 1998
   -----------------------------------------------------*/
 
 #include <windows.h>
-#include "resource.h"
+#include "Resource.h"
 
 #define ID_EDIT     1
 
@@ -171,7 +171,7 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
                return 0 ;
           
           case IDM_APP_ABOUT:
-               MessageBox (hwnd, TEXT ("POPPAD2 (c) Charles Petzold, 1998"),
+               MessageBox (hwnd, TEXT ("PopPad2 (c) Charles Petzold, 1998"),
                            szAppName, MB_OK | MB_ICONINFORMATION) ;
                return 0 ;
           }

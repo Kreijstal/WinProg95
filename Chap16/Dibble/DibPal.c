@@ -4,8 +4,8 @@
   ----------------------------------------*/
 
 #include <windows.h>
-#include "dibhelp.h"
-#include "dibpal.h"
+#include "DibHelp.h"
+#include "DibPal.h"
 
 /*------------------------------------------------------------
    DibPalDibTable: Creates a palette from the DIB color table

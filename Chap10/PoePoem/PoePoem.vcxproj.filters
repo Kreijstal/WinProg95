@@ -30,7 +30,7 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="poepoem.txt" />
+    <Text Include="PoePoem.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">

@@ -4,7 +4,7 @@
   ----------------------------------------------*/
 
 #include <windows.h>
-#include "dibfile.h"
+#include "DibFile.h"
 
 LRESULT CALLBACK WndProc (HWND, UINT, WPARAM, LPARAM) ;
 

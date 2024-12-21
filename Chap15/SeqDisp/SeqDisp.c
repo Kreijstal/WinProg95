@@ -4,7 +4,7 @@
   -----------------------------------------*/
 
 #include <windows.h>
-#include "resource.h"
+#include "Resource.h"
 
 LRESULT CALLBACK WndProc (HWND, UINT, WPARAM, LPARAM) ;
 
@@ -157,11 +157,11 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
                     return 0 ;
                }
 
-                    // Check that it's a bitmap
+                    // Check that it's a Bitmap
 
                if (bmfh.bfType != * (WORD *) "BM")
                {
-                    MessageBox (hwnd, TEXT ("File is not a bitmap."), 
+                    MessageBox (hwnd, TEXT ("File is not a Bitmap."), 
                                 szAppName, MB_ICONWARNING | MB_OK) ;
                     CloseHandle (hFile) ;
                     return 0 ;

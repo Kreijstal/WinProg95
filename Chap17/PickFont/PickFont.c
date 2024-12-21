@@ -4,7 +4,7 @@
   -----------------------------------------*/
 
 #include <windows.h>
-#include "resource.h"
+#include "Resource.h"
 
      // Structure shared between main window and dialog box
 
