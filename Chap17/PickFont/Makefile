@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -g
-WINLIBS = -lgdi32 -luser32 -lkernel32 -lcomctl32
+WINLIBS = -lgdi32 -luser32 -lkernel32 -lcomctl32 -lcomdlg32
 RC = windres
 
 TARGET = PickFont
