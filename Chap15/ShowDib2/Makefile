@@ -1,21 +1,26 @@
 
 CC = gcc
-CFLAGS = -Wall -mwindows -I../ShowDib1
+WINDRES = windres
+CFLAGS = -Wall -I../ShowDib1
+LDFLAGS = -mwindows
 LIBS = -lgdi32
 
 TARGET = ShowDib2.exe
-SRCS = ShowDib2.c ../ShowDib1/DibFile.c
+SRCS = Showdib2.c ../ShowDib1/DibFile.c
+OBJS = $(notdir $(SRCS:.c=.o))
 RES = ShowDib2.res
-OBJS = $(SRCS:.c=.o) $(RES)
 
-$(TARGET): $(OBJS)
-	$(CC) $(OBJS) $(CFLAGS) $(LIBS) -o $(TARGET)
+$(TARGET): $(OBJS) $(RES)
+	$(CC) $(OBJS) $(RES) $(LDFLAGS) $(LIBS) -o $(TARGET)
 
-.c.o:
+%.o: %.c
 	$(CC) $(CFLAGS) -c $<
 
-$(RES): ShowDib2.rc
-	windres -i ShowDib2.rc -o $(RES)
+%.o: ../ShowDib1/%.c
+	$(CC) $(CFLAGS) -c $<
+
+$(RES): ShowDib2.rc resource.h
+	$(WINDRES) -O coff ShowDib2.rc $(RES)
 
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f $(OBJS) $(RES) $(TARGET)
