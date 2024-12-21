@@ -4,11 +4,12 @@
   ----------------------------------------*/
 
 #include <windows.h>
+#include <stdint.h>
 
 #define ID_TIMER    1
 
 LRESULT CALLBACK WndProc   (HWND, UINT, WPARAM, LPARAM) ;
-VOID    CALLBACK TimerProc (HWND, UINT, UINT,   DWORD ) ;
+VOID    CALLBACK TimerProc (HWND, UINT, UINT_PTR, DWORD) ;
 
 int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance,
                     PSTR szCmdLine, int iCmdShow)
@@ -69,7 +70,7 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
      return DefWindowProc (hwnd, message, wParam, lParam) ;
 }
 
-VOID CALLBACK TimerProc (HWND hwnd, UINT message, UINT iTimerID, DWORD dwTime)
+VOID CALLBACK TimerProc (HWND hwnd, UINT message, UINT_PTR iTimerID, DWORD dwTime)
 {
      static BOOL fFlipFlop = FALSE ;
      HBRUSH      hBrush ;
