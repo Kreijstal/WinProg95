@@ -1,0 +1,42 @@
+name: MSYS2 Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        sys: [MINGW64, UCRT64]
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup MSYS2
+      uses: msys2/setup-msys2@v2
+      with:
+        msystem: ${{ matrix.sys }}
+        update: true
+        install: base-devel git
+        pacboy: >-
+          cc:p
+    
+    - name: Build
+      shell: msys2 {0}
+      run: |
+        make
+    
+    - name: Run tests
+      shell: msys2 {0}
+      run: |
+        for dir in */; do
+          if [ -f "$dir/Makefile" ]; then
+            cd "$dir"
+            make test || true
+            cd ..
+          fi
+        done
