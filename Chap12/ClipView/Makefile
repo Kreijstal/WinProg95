@@ -6,10 +6,10 @@ CFLAGS = -mwindows
 LDFLAGS = -mwindows
 
 $(PROG): $(OBJS)
-	cc $(OBJS) $(LDFLAGS) -o $(PROG)
+	$(CC) $(OBJS) $(LDFLAGS) -o $(PROG)
 
 .c.o:
-	cc -c $(CFLAGS) $<
+	$(CC) -c $(CFLAGS) $<
 
 clean:
 	rm -f $(PROG) $(OBJS)
