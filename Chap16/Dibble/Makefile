@@ -9,7 +9,7 @@ Dibble.exe: $(OBJS) Dibble.res
 	$(CC) -o Dibble.exe $(OBJS) Dibble.res $(LIBS)
 
 Dibble.res: Dibble.rc Resource.h
-	windres Dibble.rc -O coff -o Dibble.res
+	$(RC) Dibble.rc -O coff -o Dibble.res
 
 clean:
 	rm -f *.o *.exe *.res

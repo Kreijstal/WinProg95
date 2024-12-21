@@ -7,7 +7,7 @@ ShowDib4.exe: ShowDib4.o ShowDib4.res ../ShowDib3/PackeDib.o
 	$(CC) -o ShowDib4.exe ShowDib4.o ShowDib4.res ../ShowDib3/PackeDib.o $(LIBS)
 
 ShowDib4.res: ShowDib4.rc Resource.h
-	windres ShowDib4.rc -O coff -o ShowDib4.res
+	$(RC) ShowDib4.rc -O coff -o ShowDib4.res
 
 clean:
 	rm -f *.o *.exe *.res

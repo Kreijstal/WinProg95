@@ -7,7 +7,7 @@ ShowDib8.exe: ShowDib8.o ShowDib8.res ../ShowDib3/PackeDib.o
 	$(CC) -o ShowDib8.exe ShowDib8.o ShowDib8.res ../ShowDib3/PackeDib.o $(LIBS)
 
 ShowDib8.res: ShowDib8.rc Resource.h
-	windres ShowDib8.rc -O coff -o ShowDib8.res
+	$(RC) ShowDib8.rc -O coff -o ShowDib8.res
 
 clean:
 	rm -f *.o *.exe *.res
