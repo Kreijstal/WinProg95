@@ -2,20 +2,21 @@
 CC = gcc
 CFLAGS = -Wall -mwindows
 LIBS = -lgdi32
+RC = windres
 
 TARGET = DibConv.exe
 SRCS = DibConv.c
+OBJS = DibConv.o
 RES = DibConv.res
-OBJS = $(SRCS:.c=.o) $(RES)
 
-$(TARGET): $(OBJS)
-	$(CC) $(OBJS) $(CFLAGS) $(LIBS) -o $(TARGET)
+$(TARGET): $(OBJS) $(RES)
+	$(CC) $(OBJS) $(RES) $(CFLAGS) $(LIBS) -o $(TARGET)
 
 .c.o:
 	$(CC) $(CFLAGS) -c $<
 
 $(RES): DibConv.rc
-	windres -i DibConv.rc -o $(RES)
+	$(RC) $< -O coff -o $@
 
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f $(OBJS) $(RES) $(TARGET)
