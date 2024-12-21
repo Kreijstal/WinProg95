@@ -29,7 +29,7 @@ all: $(TARGET)
 
 # Linking
 $(TARGET): $(OBJS) $(RES_OBJ)
-	$(CC) $(LFLAGS) -o $@ $^
+	$(CC) -o $@ $^ $(LFLAGS)
 
 # Compiling
 %.o: %.c $(HEADERS)
