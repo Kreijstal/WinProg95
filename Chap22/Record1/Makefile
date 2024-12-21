@@ -13,4 +13,4 @@ clean:
 	rm -f $(PROG) $(OBJS)
 
 %.res: %.rc
-	windres $< -O coff -o $@
+	$(RC) $< -O coff -o $@
