@@ -104,7 +104,7 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
                iSelection = LOWORD (wParam) ;
                CheckMenuItem (hMenu, iSelection, MF_CHECKED) ;
                
-               SetClassLong (hwnd, GCL_HBRBACKGROUND, (LONG) 
+               SetClassLongPtr (hwnd, GCLP_HBRBACKGROUND, (LONG_PTR) 
                     GetStockObject 
                          (idColor [LOWORD (wParam) - IDM_BKGND_WHITE])) ;
                
