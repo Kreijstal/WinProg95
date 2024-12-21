@@ -1,4 +1,4 @@
-DIRS = Checker1 Checker2 Checker3 Checker4 Connect Blokout1 Blokout2
+DIRS = Checker1 Checker2 Checker3 Checker4 Connect Blokout1 Blokout2 Sysmets5 
 
 all:
 	for d in $(DIRS); do \

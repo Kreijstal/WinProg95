@@ -416,7 +416,7 @@ VOID ButtonSwitch (HWND hwndStatus, HWND hwndButton, TCHAR * szText)
           SetWindowText (hwndStatus, TEXT ("Internet Session Cancelled")) ;
 
      SetWindowText (hwndButton, TEXT ("OK")) ;
-     SetWindowLong (hwndButton, GWL_ID, IDOK) ;
+     SetWindowLongPtr (hwndButton, GWLP_ID, IDOK) ;
 }
 
 /*-----------------------------------------------------------------------

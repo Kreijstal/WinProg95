@@ -64,8 +64,8 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
      switch (message)
      {
      case WM_DESTROY :
-          DeleteObject ((HGDIOBJ) SetClassLong (hwnd, GCL_HBRBACKGROUND,
-                              (LONG) GetStockObject (WHITE_BRUSH))) ;
+          DeleteObject ((HGDIOBJ) SetClassLongPtr (hwnd, GCLP_HBRBACKGROUND,
+                              (LONG_PTR) GetStockObject (WHITE_BRUSH))) ;
           PostQuitMessage (0) ;
           return 0 ;
      }
@@ -92,7 +92,7 @@ BOOL CALLBACK ColorScrDlg (HWND hDlg, UINT message,
           
      case WM_VSCROLL :
           hCtrl   = (HWND) lParam ;
-          iCtrlID = GetWindowLong (hCtrl, GWL_ID) ;
+          iCtrlID = GetWindowLongPtr (hCtrl, GWLP_ID) ;
           iIndex  = iCtrlID - 10 ;
           hwndParent = GetParent (hDlg) ;
           
@@ -124,8 +124,8 @@ BOOL CALLBACK ColorScrDlg (HWND hDlg, UINT message,
           SetScrollPos  (hCtrl, SB_CTL,      iColor[iIndex], TRUE) ;
           SetDlgItemInt (hDlg,  iCtrlID + 3, iColor[iIndex], FALSE) ;
           
-          DeleteObject ((HGDIOBJ) SetClassLong (hwndParent, GCL_HBRBACKGROUND,
-                              (LONG) CreateSolidBrush (
+          DeleteObject ((HGDIOBJ) SetClassLongPtr (hwndParent, GCLP_HBRBACKGROUND,
+                              (LONG_PTR) CreateSolidBrush (
                                    RGB (iColor[0], iColor[1], iColor[2])))) ;
           
           InvalidateRect (hwndParent, NULL, TRUE) ;

@@ -311,7 +311,7 @@ LRESULT CALLBACK HelloWndProc (HWND hwnd, UINT message,
 
           pHelloData->iColor  = IDM_COLOR_BLACK ;
           pHelloData->clrText = RGB (0, 0, 0) ;
-          SetWindowLong (hwnd, 0, (long) pHelloData) ;
+          SetWindowLongPtr (hwnd, 0, (long) pHelloData) ;
           
                // Save some window handles
           
@@ -329,7 +329,7 @@ LRESULT CALLBACK HelloWndProc (HWND hwnd, UINT message,
           case IDM_COLOR_WHITE:
                     // Change the text color
                
-               pHelloData = (PHELLODATA) GetWindowLong (hwnd, 0) ;
+               pHelloData = (PHELLODATA) GetWindowLongPtr (hwnd, 0) ;
                
                hMenu = GetMenu (hwndFrame) ;
                
@@ -348,7 +348,7 @@ LRESULT CALLBACK HelloWndProc (HWND hwnd, UINT message,
                
           hdc = BeginPaint (hwnd, &ps) ;
                
-          pHelloData = (PHELLODATA) GetWindowLong (hwnd, 0) ;
+          pHelloData = (PHELLODATA) GetWindowLongPtr (hwnd, 0) ;
           SetTextColor (hdc, pHelloData->clrText) ;
                
           GetClientRect (hwnd, &rect) ;
@@ -368,7 +368,7 @@ LRESULT CALLBACK HelloWndProc (HWND hwnd, UINT message,
                
                // Check or uncheck menu item
                
-          pHelloData = (PHELLODATA) GetWindowLong (hwnd, 0) ;
+          pHelloData = (PHELLODATA) GetWindowLongPtr (hwnd, 0) ;
           CheckMenuItem (hMenuHello, pHelloData->iColor,
                     (lParam == (LPARAM) hwnd) ? MF_CHECKED : MF_UNCHECKED) ;
                
@@ -391,7 +391,7 @@ LRESULT CALLBACK HelloWndProc (HWND hwnd, UINT message,
           break ;   // i.e., call DefMDIChildProc
                
      case WM_DESTROY:
-          pHelloData = (PHELLODATA) GetWindowLong (hwnd, 0) ;
+          pHelloData = (PHELLODATA) GetWindowLongPtr (hwnd, 0) ;
           HeapFree (GetProcessHeap (), 0, pHelloData) ;
           return 0 ;
      }
@@ -419,7 +419,7 @@ LRESULT CALLBACK RectWndProc (HWND hwnd, UINT message,
           pRectData = (PRECTDATA) HeapAlloc (GetProcessHeap (),
                                    HEAP_ZERO_MEMORY, sizeof (RECTDATA)) ;
           
-          SetWindowLong (hwnd, 0, (long) pRectData) ;
+          SetWindowLongPtr (hwnd, 0, (long) pRectData) ;
           
                // Start the timer going
           
@@ -435,7 +435,7 @@ LRESULT CALLBACK RectWndProc (HWND hwnd, UINT message,
           
           if (wParam != SIZE_MINIMIZED)
           {
-               pRectData = (PRECTDATA) GetWindowLong (hwnd, 0) ;
+               pRectData = (PRECTDATA) GetWindowLongPtr (hwnd, 0) ;
                
                pRectData->cxClient = LOWORD (lParam) ;
                pRectData->cyClient = HIWORD (lParam) ;
@@ -445,7 +445,7 @@ LRESULT CALLBACK RectWndProc (HWND hwnd, UINT message,
           
      case WM_TIMER:            // Display a random rectangle
           
-          pRectData = (PRECTDATA) GetWindowLong (hwnd, 0) ;
+          pRectData = (PRECTDATA) GetWindowLongPtr (hwnd, 0) ;
           
           xLeft   = rand () % pRectData->cxClient ;
           xRight  = rand () % pRectData->cxClient ;
@@ -485,7 +485,7 @@ LRESULT CALLBACK RectWndProc (HWND hwnd, UINT message,
           return 0 ;
           
      case WM_DESTROY:
-          pRectData = (PRECTDATA) GetWindowLong (hwnd, 0) ;
+          pRectData = (PRECTDATA) GetWindowLongPtr (hwnd, 0) ;
           HeapFree (GetProcessHeap (), 0, pRectData) ;
           KillTimer (hwnd, 1) ;
           return 0 ;

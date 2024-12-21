@@ -149,7 +149,7 @@ LRESULT CALLBACK EllipPushWndProc (HWND hwnd, UINT message,
                                              // fall through
      case WM_LBUTTONUP :
           SendMessage (GetParent (hwnd), WM_COMMAND,
-               GetWindowLong (hwnd, GWL_ID), (LPARAM) hwnd) ;
+               GetWindowLongPtr (hwnd, GWLP_ID), (LPARAM) hwnd) ;
           return 0 ;
      }
      return DefWindowProc (hwnd, message, wParam, lParam) ;

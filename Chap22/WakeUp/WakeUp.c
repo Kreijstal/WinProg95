@@ -116,7 +116,7 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
      case WM_CREATE:
                // Some initialization stuff
 
-          hInstance = (HINSTANCE) GetWindowLong (hwnd, GWL_HINSTANCE) ;
+          hInstance = (HINSTANCE) GetWindowLongPtr (hwnd, GWLP_HINSTANCE) ;
 
           icex.dwSize = sizeof (icex) ;
           icex.dwICC  = ICC_DATE_CLASSES ;
@@ -172,11 +172,11 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
                // Subclass the three child windows
 
           SubbedProc [ID_TIMEPICK] = (WNDPROC) 
-                         SetWindowLong (hwndDTP, GWL_WNDPROC, (LONG) SubProc) ;
+                         SetWindowLongPtr (hwndDTP, GWLP_WNDPROC, (LONG) SubProc) ;
           SubbedProc [ID_CHECKBOX] = (WNDPROC) 
-                         SetWindowLong (hwndCheck, GWL_WNDPROC, (LONG) SubProc);
+                         SetWindowLongPtr (hwndCheck, GWLP_WNDPROC, (LONG) SubProc);
           SubbedProc [ID_PUSHBTN] = (WNDPROC) 
-                         SetWindowLong (hwndPush, GWL_WNDPROC, (LONG) SubProc) ;
+                         SetWindowLongPtr (hwndPush, GWLP_WNDPROC, (LONG) SubProc) ;
           
                // Set the date and time picker control to the current time
                // plus 9 hours, rounded down to next lowest hour
@@ -315,7 +315,7 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 LRESULT CALLBACK SubProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
-     int idNext, id = GetWindowLong (hwnd, GWL_ID) ;
+     int idNext, id = GetWindowLongPtr (hwnd, GWLP_ID) ;
          
      switch (message)
      {
