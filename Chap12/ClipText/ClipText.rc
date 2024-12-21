@@ -47,6 +47,18 @@ END
 #endif    // APSTUDIO_INVOKED
 
 
+ /////////////////////////////////////////////////////////////////////////////
+ //
+ // Accelerator
+ //
+
+ CLIPTEXT ACCELERATORS DISCARDABLE
+ BEGIN
+     "C",            IDM_EDIT_COPY,          VIRTKEY, CONTROL, NOINVERT
+     "V",            IDM_EDIT_PASTE,         VIRTKEY, CONTROL, NOINVERT
+     VK_DELETE,      IDM_EDIT_CLEAR,         VIRTKEY, NOINVERT
+     "X",            IDM_EDIT_CUT,           VIRTKEY, CONTROL, NOINVERT
+ END
 /////////////////////////////////////////////////////////////////////////////
 //
 // Menu
