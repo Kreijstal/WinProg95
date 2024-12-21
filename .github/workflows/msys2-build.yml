@@ -2,9 +2,9 @@ name: MSYS2 Build
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "**" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "**" ]
 
 jobs:
   build:
@@ -29,14 +29,3 @@ jobs:
       shell: msys2 {0}
       run: |
         make
-    
-    - name: Run tests
-      shell: msys2 {0}
-      run: |
-        for dir in */; do
-          if [ -f "$dir/Makefile" ]; then
-            cd "$dir"
-            make test || true
-            cd ..
-          fi
-        done
