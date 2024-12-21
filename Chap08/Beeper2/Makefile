@@ -1,9 +1,9 @@
 .PHONY: all clean
 
-all: beeper2.exe
+all: Beeper2.exe
 
-beeper2.exe: beeper2.c
-	cc beeper2.c -o beeper2.exe -Wall -mwindows
+Beeper2.exe: Beeper2.c
+	$(CC) Beeper2.c -o Beeper2.exe -Wall -mwindows
 
 clean:
-	rm -f beeper2.exe
+	rm -f Beeper2.exe
