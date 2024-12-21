@@ -60,7 +60,7 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
      switch (message)
      {
      case WM_CREATE:
-          hInstance = (HINSTANCE) GetWindowLong (hwnd, GWL_HINSTANCE) ;
+          hInstance = (HINSTANCE) GetWindowLongPtr (hwnd, GWLP_HINSTANCE) ;
           
           hMenuMain = LoadMenu (hInstance, TEXT ("MenuMain")) ;
           hMenuFile = LoadMenu (hInstance, TEXT ("MenuFile")) ;
