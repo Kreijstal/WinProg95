@@ -8,7 +8,7 @@ WINDRES = windres
 CFLAGS = -Wall -g
 
 # Linker flags
-LFLAGS = -mwindows
+LFLAGS = -mwindows -lwinspool
 
 # Project name
 TARGET = DevCaps2.exe
