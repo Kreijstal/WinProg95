@@ -7,7 +7,7 @@ PopPad3.exe: $(OBJS) PopPad.res
 	$(CC) -o $@ $(OBJS) PopPad.res -lgdi32 -lcomdlg32
 
 PopPad.res: PopPad.rc
-	windres -i PopPad.rc -o PopPad.res
+	windres -i PopPad.rc -o PopPad.res --target=pe-x86-64
 
 clean:
 	rm -f *.o *.res *.exe

@@ -7,7 +7,7 @@ About2.exe: $(OBJS) About2.res
 	$(CC) -o $@ $(OBJS) About2.res -lgdi32
 
 About2.res: About2.rc
-	windres -i About2.rc -o About2.res
+	windres -i About2.rc -o About2.res --target=pe-x86-64
 
 clean:
 	rm -f *.o *.res *.exe
