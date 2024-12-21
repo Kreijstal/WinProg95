@@ -35,10 +35,10 @@ int MessageBoxPrintf(
     return MessageBox(NULL, szBuffer, szCaption, MB_OK);
 }
 
-int WINAPI _tWinMain(
+int WINAPI WinMain(
     HINSTANCE hInstance,
     HINSTANCE hPrevInstance,
-    PTSTR pCmdLine,
+    LPSTR lpCmdLine,
     int nShowCmd)
 {
     UNREFERENCED_PARAMETER(hInstance);
