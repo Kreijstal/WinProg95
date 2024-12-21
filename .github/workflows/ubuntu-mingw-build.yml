@@ -24,4 +24,4 @@ jobs:
     
     - name: Build
       run: |
-        make CC=${{ matrix.arch }}-w64-mingw32-gcc
+        make CC=${{ matrix.arch }}-w64-mingw32-gcc RC=${{ matrix.arch }}-w64-mingw32-windres
