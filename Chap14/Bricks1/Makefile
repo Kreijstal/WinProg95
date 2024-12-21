@@ -1,4 +1,5 @@
 CC = cc
+RC ?= windres
 CFLAGS = -Wall -mwindows
 LIBS = -lgdi32
 
@@ -9,7 +10,7 @@ $(TARGET): $(OBJS)
 	$(CC) -o $(TARGET) $(OBJS) $(LIBS)
 
 Bricks1_res.o: Bricks1.rc
-	windres $< $@
+	$(RC) -O coff $< $@
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
