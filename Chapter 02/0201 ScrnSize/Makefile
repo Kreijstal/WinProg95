@@ -1,7 +1,7 @@
 # Makefile for ScrnSize using MSYS2/MinGW
 
 CC = gcc
-CFLAGS = -Wall -Wextra
+CFLAGS = -Wall -Wextra -D_UNICODE -DUNICODE
 LDFLAGS = -mwindows
 
 TARGET = ScrnSize.exe

@@ -9,10 +9,9 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-_Check_return_opt_
-int __cdecl MessageBoxPrintf(
-    _In_opt_ PCTSTR szCaption,
-    _In_z_ _Printf_format_string_ PCTSTR szFormat,
+int MessageBoxPrintf(
+    PCTSTR szCaption,
+    PCTSTR szFormat,
     ...)
 {
     TCHAR   szBuffer[1024];
@@ -37,10 +36,10 @@ int __cdecl MessageBoxPrintf(
 }
 
 int WINAPI _tWinMain(
-    _In_ HINSTANCE hInstance,
-    _In_opt_ HINSTANCE hPrevInstance,
-    _In_ PTSTR pCmdLine,
-    _In_ int nShowCmd)
+    HINSTANCE hInstance,
+    HINSTANCE hPrevInstance,
+    PTSTR pCmdLine,
+    int nShowCmd)
 {
     UNREFERENCED_PARAMETER(hInstance);
     UNREFERENCED_PARAMETER(hPrevInstance);
