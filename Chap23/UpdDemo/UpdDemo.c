@@ -47,7 +47,7 @@ PARAMS ;
      // Declarations of all functions in program
 
 LRESULT CALLBACK WndProc (HWND, UINT, WPARAM, LPARAM) ;
-BOOL    CALLBACK DlgProc (HWND, UINT, WPARAM, LPARAM) ;
+INT_PTR CALLBACK DlgProc (HWND, UINT, WPARAM, LPARAM) ;
 VOID             FtpThread (PVOID) ;
 VOID             ButtonSwitch (HWND, HWND, TCHAR *) ;
 FILELIST *       GetFileList (VOID) ;
@@ -240,7 +240,7 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
      return DefWindowProc (hwnd, message, wParam, lParam) ;
 }
 
-BOOL CALLBACK DlgProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
+INT_PTR CALLBACK DlgProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
      static PARAMS params ;
 
@@ -492,7 +492,10 @@ FILELIST * GetFileList (void)
    Compare function for qsort
   ----------------------------*/
 
-int Compare (const FILEINFO * pinfo1, const FILEINFO * pinfo2)
+int Compare (const void * p1, const void * p2)
+{
+     const FILEINFO * pinfo1 = p1;
+     const FILEINFO * pinfo2 = p2;
 {
      return lstrcmp (pinfo2->szFilename, pinfo1->szFilename) ;
 }
