@@ -1,11 +1,13 @@
-DIRS = 0101\ HelloMsg
+SUBDIRS = "0101 HelloMsg"
 
-all: ${DIRS}
+all: subdirs
 
-${DIRS}: FORCE
-	$(MAKE) -C $@
+subdirs:
+	for dir in $(SUBDIRS); do \
+		$(MAKE) -C "$$dir" || exit 1; \
+	done
 
 clean:
-	for dir in ${DIRS}; do $(MAKE) -C $$dir clean; done
-
-FORCE:
+	for dir in $(SUBDIRS); do \
+		$(MAKE) -C "$$dir" clean; \
+	done
