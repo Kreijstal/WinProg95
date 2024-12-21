@@ -58,7 +58,7 @@ HBITMAP CreateDibSectionFromDibFile (PTSTR szFileName)
 {
      BITMAPFILEHEADER bmfh ;
      BITMAPINFO     * pbmi ;
-     BYTE           * pBits ;
+     VOID           * pBits ;
      BOOL             bSuccess ;
      DWORD            dwInfoSize, dwBytesRead ;
      HANDLE           hFile ;
@@ -101,7 +101,7 @@ HBITMAP CreateDibSectionFromDibFile (PTSTR szFileName)
 
           // Create the DIB Section
 
-     hBitmap = CreateDIBSection (NULL, pbmi, DIB_RGB_COLORS, &pBits, NULL, 0) ;
+     hBitmap = CreateDIBSection (NULL, pbmi, DIB_RGB_COLORS, (VOID**)&pBits, NULL, 0) ;
 
      if (hBitmap == NULL)
      {
