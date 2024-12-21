@@ -1,6 +1,7 @@
 # Makefile for MDIDemo
 
 PROGRAM = MDIDemo
+RC = windres
 
 SOURCES = $(PROGRAM).c
 OBJECTS = $(SOURCES:.c=.o) $(PROGRAM)_res.o
@@ -18,7 +19,7 @@ $(PROGRAM)_res.o: $(RES)
 	windres $< $@
 
 %.res: %.rc resource.h
-	windres -i $< -o $@
+	$(RC) $< -O coff -o $@
 
 clean:
 	rm -f $(PROGRAM) $(OBJECTS) $(RES)
