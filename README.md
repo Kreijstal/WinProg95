@@ -1,6 +1,27 @@
 # petzold-pw5e
 Revisited C source code for Charles Petzold's Programming Windows 5th Edition ISBN-10 157231995X
 
+## Building with MSYS2
+
+1. Install MSYS2 from https://www.msys2.org
+2. Open MSYS2 MINGW64 shell (or UCRT64/CLANG64/MINGW32)
+3. Install required packages:
+   ```bash
+   pacman -S --needed base-devel git mingw-w64-x86_64-toolchain
+   ```
+4. Clone and build:
+   ```bash
+   git clone https://github.com/your-username/petzold-pw5e.git
+   cd petzold-pw5e
+   make
+   ```
+
+The code can be built using any of these MSYS2 environments:
+- MINGW64 (gcc toolchain, 64-bit)
+- UCRT64 (gcc toolchain with UCRT runtime, 64-bit)
+- CLANG64 (clang/LLVM toolchain, 64-bit) 
+- MINGW32 (gcc toolchain, 32-bit)
+
 The 5th edition Programming Windows was published in 1998 in the era of Windows 98,
  Windows NT and Internet Explorer 4. There is a 6th edition, but this deals with
  later Windows technologies - the 5th edition was the last to deal with purely C
