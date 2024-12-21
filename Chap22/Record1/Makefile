@@ -1,3 +1,5 @@
+RC ?= windres
+
 PROG = Record1.exe
 OBJS = Record1.o Record.res
 
@@ -6,11 +8,14 @@ LDFLAGS = -mwindows
 LDLIBS = -lwinmm
 
 $(PROG): $(OBJS)
-	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LDLIBS)
+	$(CC) $(OBJS) $(LDFLAGS) $(LDLIBS) -o $(PROG)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+%.res: %.rc
+	$(RC) -I. $< -O coff -o $@
 
 .PHONY: clean
 clean:
 	rm -f $(PROG) $(OBJS)
-
-%.res: %.rc
-	$(RC) $< -O coff -o $@
