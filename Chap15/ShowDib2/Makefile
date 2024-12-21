@@ -1,6 +1,6 @@
 
 CC = cc
-WINDRES = windres
+RC ?= windres
 CFLAGS = -Wall -I../ShowDib1
 LDFLAGS = -mwindows
 LIBS = -lgdi32
@@ -20,7 +20,7 @@ $(TARGET): $(OBJS) $(RES)
 	$(CC) $(CFLAGS) -c $<
 
 $(RES): ShowDib2.rc Resource.h
-	$(WINDRES) -O coff ShowDib2.rc $(RES)
+	$(RC) -O coff ShowDib2.rc $(RES)
 
 clean:
 	rm -f $(OBJS) $(RES) $(TARGET)
