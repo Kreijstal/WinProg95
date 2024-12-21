@@ -1,0 +1,27 @@
+name: Ubuntu MinGW Build
+
+on:
+  push:
+    branches: [ "**" ]
+  pull_request:
+    branches: [ "**" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        arch: [i686, x86_64]
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install MinGW
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y mingw-w64
+    
+    - name: Build
+      run: |
+        make CC=${{ matrix.arch }}-w64-mingw32-gcc
