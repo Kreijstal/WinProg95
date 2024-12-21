@@ -1,6 +1,7 @@
 CC = cc
 CFLAGS = -Wall -mwindows
 LIBS = -lgdi32 -lwinspool
+RC ?= windres
 
 TARGET = Print3.exe
 OBJS = Print3.o Print.res ../FormFeed/GetPrnDC.o ../Print1/Print.o
