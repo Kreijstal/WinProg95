@@ -8,7 +8,7 @@
 
 #define ID_TIMER    1
 
-BOOL CALLBACK DlgProc (HWND, UINT, WPARAM, LPARAM) ;
+INT_PTR CALLBACK DlgProc (HWND, UINT, WPARAM, LPARAM) ;
 
 TCHAR szAppName [] = TEXT ("TestMci") ;
 
@@ -23,7 +23,7 @@ int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance,
      return 0 ;
 }
 
-BOOL CALLBACK DlgProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
+INT_PTR CALLBACK DlgProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
      static HWND hwndEdit ;
      int         iCharBeg, iCharEnd, iLineBeg, iLineEnd, iChar, iLine, iLength ;
