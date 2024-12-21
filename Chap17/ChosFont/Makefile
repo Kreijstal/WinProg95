@@ -10,7 +10,7 @@ RES = ChosFont.res
 $(TARGET): $(SRCS) $(RES)
 	$(CC) $(CFLAGS) $(SRCS) $(RES) -o $(TARGET) $(WINLIBS)
 
-$(RES): ChosFont.rc
+%.res: %.rc
 	$(RC) $< -O coff -o $@
 
 clean:
