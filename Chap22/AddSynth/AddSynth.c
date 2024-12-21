@@ -13,7 +13,7 @@
 #define MAX_PARTIALS        21
 #define PI             3.14159
 
-BOOL CALLBACK DlgProc (HWND, UINT, WPARAM, LPARAM) ;
+INT_PTR CALLBACK DlgProc (HWND, UINT, WPARAM, LPARAM) ;
 
 TCHAR szAppName [] = TEXT ("AddSynth") ;
 
@@ -197,7 +197,7 @@ int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance,
      return 0 ;
 }
 
-BOOL CALLBACK DlgProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
+INT_PTR CALLBACK DlgProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
      static TCHAR * szTrum = TEXT ("Trumpet.wav") ;
      static TCHAR * szOboe = TEXT ("Oboe.wav") ;
