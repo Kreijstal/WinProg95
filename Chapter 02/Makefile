@@ -9,3 +9,16 @@ clean:
 	for dir in ${DIRS}; do $(MAKE) -C $$dir clean; done
 
 FORCE:
+SUBDIRS = "0201 ScrnSize"
+
+all: subdirs
+
+subdirs:
+	for dir in $(SUBDIRS); do \
+		$(MAKE) -C "$$dir" || exit 1; \
+	done
+
+clean:
+	for dir in $(SUBDIRS); do \
+		$(MAKE) -C "$$dir" clean; \
+	done
