@@ -59,7 +59,7 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
      static HPALETTE     hPalette ;
      static int          cxClient, cyClient ;
      static OPENFILENAME ofn ;
-     static PBYTE        pBits ;
+     static VOID*        pBits ;
      static TCHAR        szFileName [MAX_PATH], szTitleName [MAX_PATH] ;
      static TCHAR        szFilter[] = TEXT ("Bitmap Files (*.BMP)\0*.bmp\0")
                                       TEXT ("All Files (*.*)\0*.*\0\0") ;
