@@ -1,9 +1,13 @@
+CFLAGS = -Wall
+LDFLAGS = -mwindows 
+LDLIBS = -lcomctl32
+
 .PHONY: all clean
 
-all: owndraw.exe
+all: OwnDraw.exe
 
-owndraw.exe: owndraw.c
-	cc owndraw.c -o owndraw.exe -Wall -mwindows -lcomctl32
+OwnDraw.exe: OwnDraw.o
+	$(CC) $(LDFLAGS) -o $@ $^ $(LDLIBS)
 
 clean:
-	rm -f owndraw.exe
+	rm -f OwnDraw.exe OwnDraw.o
