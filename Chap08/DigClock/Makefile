@@ -1,9 +1,9 @@
 .PHONY: all clean
 
-all: digclock.exe
+all: DigClock.exe
 
-digclock.exe: digclock.c
-	cc digclock.c -o digclock.exe -Wall -mwindows
+DigClock.exe: DigClock.c
+	$(CC) DigClock.c -o DigClock.exe -Wall -mwindows
 
 clean:
-	rm -f digclock.exe
+	rm -f DigClock.exe
