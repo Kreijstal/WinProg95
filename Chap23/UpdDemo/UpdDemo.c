@@ -51,7 +51,7 @@ INT_PTR CALLBACK DlgProc (HWND, UINT, WPARAM, LPARAM) ;
 VOID             FtpThread (PVOID) ;
 VOID             ButtonSwitch (HWND, HWND, TCHAR *) ;
 FILELIST *       GetFileList (VOID) ;
-int              Compare (const FILEINFO *, const FILEINFO *) ;
+int              Compare (const void *, const void *) ;
 
      // A couple globals
 
@@ -496,7 +496,6 @@ int Compare (const void * p1, const void * p2)
 {
      const FILEINFO * pinfo1 = p1;
      const FILEINFO * pinfo2 = p2;
-{
      return lstrcmp (pinfo2->szFilename, pinfo1->szFilename) ;
 }
 
