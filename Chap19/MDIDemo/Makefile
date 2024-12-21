@@ -15,11 +15,11 @@ all: $(PROGRAM)
 $(PROGRAM): $(OBJECTS)
 	$(CC) -o $@ $(OBJECTS) $(LDLIBS)
 
-$(PROGRAM)_res.o: $(RES)
-	windres $< $@
+%.res: %.rc resource.h
+	$(RC) -I. $< -O coff -o $@
 
-%.res: %.rc Resource.h
-	$(RC) $< -O coff -o $@
+$(PROGRAM)_res.o: $(RES)
+	$(RC) -I. $< -o $@
 
 clean:
 	rm -f $(PROGRAM) $(OBJECTS) $(RES)
