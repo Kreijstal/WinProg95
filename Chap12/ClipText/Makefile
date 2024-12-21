@@ -9,10 +9,10 @@ LDFLAGS = -mwindows -municode
 $(PROG): $(OBJS)
 	cc $(OBJS) $(LDFLAGS) -o $(PROG)
 
-ClipText.o: ClipText.c resource.h
+ClipText.o: ClipText.c Resource.h
 	cc -c $(CFLAGS) $<
 
-ClipText_rc.o: $(RESOURCES) resource.h
+ClipText_rc.o: $(RESOURCES) Resource.h
 	windres -I. -i $< -o $@
 
 clean:
