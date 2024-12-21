@@ -2,11 +2,11 @@
    HEXCALC.DLG dialog script
   ---------------------------*/
 
-HexCalc DIALOG -1, -1, 102, 122
+HEXCALC DIALOG DISCARDABLE 0, 0, 172, 127
 STYLE WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX
 CLASS "HexCalc"
 CAPTION "Hex Calculator"
-{
+/*{
      PUSHBUTTON "D",       68,  8,  24, 14, 14
      PUSHBUTTON "A",       65,  8,  40, 14, 14
      PUSHBUTTON "7",       55,  8,  56, 14, 14
@@ -36,8 +36,7 @@ CAPTION "Hex Calculator"
      PUSHBUTTON "^",       94, 80,  56, 14, 14
      PUSHBUTTON "<",       60, 80,  72, 14, 14
      PUSHBUTTON ">",       62, 80,  88, 14, 14
-}
-HEXCALC DIALOG DISCARDABLE 0, 0, 172, 127
+}*/
 STYLE WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX
 CAPTION "Hex Calculator"
 FONT 8, "MS Sans Serif"
