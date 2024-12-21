@@ -1,7 +1,7 @@
 # Makefile for FormFeed project using $(CC) and windres
 
 # Compiler and linker settings
-CC = $(CC)
+CC = cc
 WINDRES = windres
 
 # Compiler flags
