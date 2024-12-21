@@ -68,7 +68,7 @@ int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance,
      return msg.wParam ;
 }
 
-BOOL CALLBACK DlgProc (HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
+INT_PTR CALLBACK DlgProc (HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 {
      switch (message)
      {
@@ -92,8 +92,9 @@ BOOL CALLBACK DlgProc (HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
      return FALSE ;
 }
 
-BOOL CALLBACK GetStrCallBack (PTSTR pString, CBPARAM * pcbp)
+BOOL CALLBACK GetStrCallBack (PCWSTR pString, PVOID pParam)
 {
+     CBPARAM *pcbp = (CBPARAM *)pParam;
      TextOut (pcbp->hdc, pcbp->xText, pcbp->yText,
               pString, lstrlen (pString)) ;
      
@@ -172,7 +173,7 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
           cbparam.xMax  = cbparam.xIncr * (1 + cxClient / cbparam.xIncr) ;
           cbparam.yMax  = cyChar * (cyClient / cyChar - 1) ;
                
-          GetStrings ((GETSTRCB) GetStrCallBack, (PVOID) &cbparam) ;
+          GetStrings ((GETSTRPROC) GetStrCallBack, (PVOID) &cbparam) ;
               
           EndPaint (hwnd, &ps) ;
           return 0 ;
