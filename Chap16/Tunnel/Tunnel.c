@@ -8,6 +8,11 @@
 
 #define ID_TIMER 1
 
+// Function prototypes
+HPALETTE CreateRoutine(HWND hwnd);
+void PaintRoutine(HDC hdc, int cxClient, int cyClient);
+void TimerRoutine(HDC hdc, HPALETTE hPalette);
+void DestroyRoutine(HWND hwnd, HPALETTE hPalette);
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 
 TCHAR szAppName [] = TEXT ("Tunnel") ;
@@ -15,8 +20,8 @@ TCHAR szTitle   [] = TEXT ("Tunnel: Palette Animation Demo") ;
 
 static LOGPALETTE * plp ;
 
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
-                   PSTR szCmdLine, int iCmdShow)
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance __attribute__((unused)),
+                   PSTR szCmdLine __attribute__((unused)), int iCmdShow)
 {
      HWND     hwnd;
      MSG      msg;
