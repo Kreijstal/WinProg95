@@ -1,9 +1,17 @@
 .PHONY: all clean
 
-all: colors1.exe
+CFLAGS = -Wall
+LDFLAGS = -mwindows
+LDLIBS = -lcomctl32
 
-colors1.exe: colors1.c
-	cc colors1.c -o colors1.exe -Wall -mwindows -lcomctl32
+TARGET = Colors1.exe
+OBJS = Colors1.o Colors1.res
+
+$(TARGET): $(OBJS)
+	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LDLIBS)
+
+%.res: %.rc
+	$(RC) $< -O coff -o $@
 
 clean:
-	rm -f colors1.exe
+	rm -f $(TARGET) $(OBJS)
