@@ -1,11 +1,11 @@
-DIRS = "0101 HelloMsg"
+DIRS = 0101\ HelloMsg
 
 all: ${DIRS}
 
 ${DIRS}: FORCE
-	cd "$@" && $(MAKE)
+	$(MAKE) -C $@
 
 clean:
-	for %%I in (${DIRS}) do cd %%I && $(MAKE) clean
+	for dir in ${DIRS}; do $(MAKE) -C $$dir clean; done
 
 FORCE:
