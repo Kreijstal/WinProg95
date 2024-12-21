@@ -5,7 +5,7 @@
 
 #define WINVER 0x0500
 #include <windows.h>
-#include "sysmets.h"
+#include "SysMets.h"
 
 LRESULT CALLBACK WndProc (HWND, UINT, WPARAM, LPARAM) ;
 
