@@ -16,7 +16,7 @@ $(TARGET): $(OBJS) $(RES)
 .c.o:
 	$(CC) $(CFLAGS) -c $<
 
-$(RES): DibSect.rc resource.h
+$(RES): DibSect.rc Resource.h
 	$(WINDRES) -O coff DibSect.rc $(RES)
 
 clean:
