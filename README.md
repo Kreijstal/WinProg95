@@ -8,7 +8,7 @@ Revisited C source code for Charles Petzold's Programming Windows 5th Edition IS
 3. Install required packages:
    ```bash
    pacman -S --needed base-devel git
-   pacboy -S toolchain:p
+   pacboy -S cc:p
    ```
 4. Clone and build:
    ```bash
