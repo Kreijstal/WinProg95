@@ -62,7 +62,7 @@ int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance,
      return msg.wParam ;
 }
 
-AskConfirmation (HWND hwnd)
+int AskConfirmation (HWND hwnd)
 {
      return MessageBox (hwnd, TEXT ("Really want to close PopPad2?"),
                         szAppName, MB_YESNO | MB_ICONQUESTION) ;
