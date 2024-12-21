@@ -10,8 +10,8 @@ RES = Unichars.res
 $(TARGET): $(SRCS) $(RES)
 	$(CC) $(CFLAGS) $(SRCS) $(RES) -o $(TARGET) $(WINLIBS)
 
-$(RES): Unichars.rc
-	$(RC) -i $< -o $@ --target=pe-x86-64
+%.res: %.rc
+	$(RC) $< -O coff -o $@
 
 clean:
 	rm -f $(TARGET) $(RES)

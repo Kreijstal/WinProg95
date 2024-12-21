@@ -10,8 +10,8 @@ RES = FontDemo.res
 $(TARGET): $(SRCS) $(RES)
 	$(CC) $(CFLAGS) $(SRCS) $(RES) -o $(TARGET) $(WINLIBS)
 
-$(RES): FontDemo.rc
-	$(RC) -i $< -o $@ --target=pe-x86-64
+%.res: %.rc
+	$(RC) $< -O coff -o $@
 
 clean:
 	rm -f $(TARGET) $(RES)
