@@ -10,7 +10,7 @@
 
 #define TIMER_RES   5
 
-void CALLBACK DrumTimerFunc (UINT, UINT, DWORD, DWORD, DWORD) ;
+void CALLBACK DrumTimerFunc (UINT, UINT, DWORD_PTR, DWORD_PTR, DWORD_PTR) ;
 
 BOOL     bSequenceGoing, bEndSequence ;
 DRUM     drum ;
@@ -98,8 +98,8 @@ void DrumEndSequence (BOOL bRightAway)
           bEndSequence = TRUE ;
 }
 
-void CALLBACK DrumTimerFunc (UINT  uID, UINT uMsg, DWORD dwUser,
-                             DWORD dw1, DWORD dw2)
+void CALLBACK DrumTimerFunc (UINT uID, UINT uMsg, DWORD_PTR dwUser,
+                            DWORD_PTR dw1, DWORD_PTR dw2)
 {
      static DWORD dwSeqPercLast [NUM_PERC], dwSeqPianLast [NUM_PERC] ;
      int          i ;
