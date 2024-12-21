@@ -1,6 +1,6 @@
 CFLAGS = -Wall
 LDFLAGS = -mwindows
-LDLIBS = -lwinmm -lcomctl32
+LDLIBS = -lwinmm -lcomctl32 -lwininet
 
 TARGET = UpdDemo.exe
 OBJS = UpdDemo.o UpdDemo_rc.o
