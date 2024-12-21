@@ -2,7 +2,7 @@ CFLAGS = -Wall -Wextra
 LDLIBS = -lgdi32
 
 TARGET = MetaFile
-SRCS = $(TARGET).c
+SRCS = Metafile.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(TARGET)
