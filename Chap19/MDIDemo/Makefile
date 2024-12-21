@@ -5,7 +5,6 @@ RC = windres
 
 SOURCES = $(PROGRAM).c
 OBJECTS = $(SOURCES:.c=.o) $(PROGRAM)_res.o
-RES = $(PROGRAM).res
 
 CFLAGS = -Wall -Wextra
 LDLIBS = -lgdi32 -luser32 -lkernel32 -lcomctl32
@@ -15,11 +14,8 @@ all: $(PROGRAM)
 $(PROGRAM): $(OBJECTS)
 	$(CC) -o $@ $(OBJECTS) $(LDLIBS)
 
-%.res: %.rc resource.h
+$(PROGRAM)_res.o: $(PROGRAM).rc resource.h
 	$(RC) -I. $< -O coff -o $@
 
-$(PROGRAM)_res.o: $(RES)
-	$(RC) -I. $< -o $@
-
 clean:
-	rm -f $(PROGRAM) $(OBJECTS) $(RES)
+	rm -f $(PROGRAM) $(OBJECTS)
