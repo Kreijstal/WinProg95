@@ -1,9 +1,9 @@
 .PHONY: all clean
 
-all: whatclr.exe
+all: WhatClr.exe
 
-whatclr.exe: whatclr.c
-	cc whatclr.c -o whatclr.exe -Wall -mwindows
+WhatClr.exe: WhatClr.c
+	$(CC) WhatClr.c -o WhatClr.exe -Wall -mwindows
 
 clean:
-	rm -f whatclr.exe
+	rm -f WhatClr.exe
