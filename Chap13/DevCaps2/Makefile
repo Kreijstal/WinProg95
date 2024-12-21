@@ -1,7 +1,7 @@
 # Makefile for DevCaps2 project using $(CC) and windres
 
 # Compiler and linker settings
-CC = gcc
+CC = $(CC)
 WINDRES = windres
 
 # Compiler flags
