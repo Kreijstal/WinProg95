@@ -2,20 +2,21 @@
 CC = gcc
 CFLAGS = -Wall -mwindows
 LIBS = -lgdi32
+RC = windres
 
 TARGET = ShowDib1.exe
 SRCS = ShowDib1.c DibFile.c
+OBJS = ShowDib1.o DibFile.o
 RES = ShowDib1.res
-OBJS = $(SRCS:.c=.o) $(RES)
 
-$(TARGET): $(OBJS)
-	$(CC) $(OBJS) $(CFLAGS) $(LIBS) -o $(TARGET)
+$(TARGET): $(OBJS) $(RES)
+	$(CC) $(OBJS) $(RES) $(CFLAGS) $(LIBS) -o $(TARGET)
 
 .c.o:
 	$(CC) $(CFLAGS) -c $<
 
 $(RES): ShowDib1.rc
-	windres -i ShowDib1.rc -o $(RES)
+	$(RC) $< -O coff -o $@
 
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f $(OBJS) $(RES) $(TARGET)

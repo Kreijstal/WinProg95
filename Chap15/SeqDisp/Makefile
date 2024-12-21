@@ -2,20 +2,21 @@
 CC = gcc
 CFLAGS = -Wall -mwindows
 LIBS = -lgdi32
+RC = windres
 
 TARGET = SeqDisp.exe
 SRCS = SeqDisp.c
+OBJS = SeqDisp.o
 RES = SeqDisp.res
-OBJS = $(SRCS:.c=.o) $(RES)
 
-$(TARGET): $(OBJS)
-	$(CC) $(OBJS) $(CFLAGS) $(LIBS) -o $(TARGET)
+$(TARGET): $(OBJS) $(RES)
+	$(CC) $(OBJS) $(RES) $(CFLAGS) $(LIBS) -o $(TARGET)
 
 .c.o:
 	$(CC) $(CFLAGS) -c $<
 
 $(RES): SeqDisp.rc
-	windres -i SeqDisp.rc -o $(RES)
+	$(RC) $< -O coff -o $@
 
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f $(OBJS) $(RES) $(TARGET)
