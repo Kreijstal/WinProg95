@@ -1,21 +1,23 @@
 
 CC = gcc
-CFLAGS = -Wall -mwindows
+WINDRES = windres
+CFLAGS = -Wall
+LDFLAGS = -mwindows
 LIBS = -lgdi32
 
 TARGET = DibSect.exe
 SRCS = DibSect.c
 RES = DibSect.res
-OBJS = $(SRCS:.c=.o) $(RES)
+OBJS = $(SRCS:.c=.o)
 
-$(TARGET): $(OBJS)
-	$(CC) $(OBJS) $(CFLAGS) $(LIBS) -o $(TARGET)
+$(TARGET): $(OBJS) $(RES)
+	$(CC) $(OBJS) $(RES) $(LDFLAGS) $(LIBS) -o $(TARGET)
 
 .c.o:
 	$(CC) $(CFLAGS) -c $<
 
-$(RES): DibSect.rc
-	windres -i DibSect.rc -o $(RES)
+$(RES): DibSect.rc resource.h
+	$(WINDRES) -O coff DibSect.rc $(RES)
 
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f $(OBJS) $(RES) $(TARGET)
