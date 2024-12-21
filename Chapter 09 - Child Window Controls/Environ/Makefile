@@ -1,9 +1,13 @@
+CFLAGS = -Wall
+LDFLAGS = -mwindows 
+LDLIBS = -lcomctl32
+
 .PHONY: all clean
 
-all: environ.exe
+all: Environ.exe
 
-environ.exe: environ.c
-	cc environ.c -o environ.exe -Wall -mwindows -lcomctl32
+Environ.exe: Environ.o
+	$(CC) $(LDFLAGS) -o $@ $^ $(LDLIBS)
 
 clean:
-	rm -f environ.exe
+	rm -f Environ.exe Environ.o
