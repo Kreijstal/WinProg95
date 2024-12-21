@@ -1,4 +1,4 @@
-CC = gcc
+CC = cc
 CFLAGS = -o $@ -Wall -mwindows
 TARGET = StokFont.exe
 OBJS = StokFont.o

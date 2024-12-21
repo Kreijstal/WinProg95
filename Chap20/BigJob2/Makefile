@@ -1,4 +1,4 @@
-CC = gcc
+CC = cc
 CFLAGS = -Wall -mwindows
 TARGET = BigJob2
 SRCS = BigJob2.c

@@ -1,4 +1,4 @@
-CC = gcc
+CC = cc
 CFLAGS = -o $@ -Wall -mwindows
 
 checker4.exe: checker4.c

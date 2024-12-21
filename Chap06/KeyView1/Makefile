@@ -1,4 +1,4 @@
-CC = gcc
+CC = cc
 CFLAGS = -o $@ -Wall -mwindows
 TARGET = KeyView1.exe
 OBJS = KeyView1.o

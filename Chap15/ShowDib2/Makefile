@@ -1,5 +1,5 @@
 
-CC = gcc
+CC = cc
 WINDRES = windres
 CFLAGS = -Wall -I../ShowDib1
 LDFLAGS = -mwindows

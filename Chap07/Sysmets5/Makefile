@@ -1,4 +1,4 @@
-CC = gcc
+CC = cc
 CFLAGS = -o $@ -Wall -mwindows -I. -I../../Chap04/SysMets1
 TARGET = SysMets5.exe
 OBJS = SysMets5.o

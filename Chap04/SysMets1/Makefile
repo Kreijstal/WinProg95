@@ -1,6 +1,6 @@
 # Makefile for SysMets1 using MSYS2/MinGW
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -D_UNICODE -DUNICODE
 LDFLAGS = -mwindows
 

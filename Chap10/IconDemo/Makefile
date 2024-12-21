@@ -1,6 +1,6 @@
 # Makefile for IconDemo
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall
 LIBS = -lgdi32 -luser32 -lkernel32
 RC = windres

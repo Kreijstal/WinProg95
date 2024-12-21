@@ -1,4 +1,4 @@
-CC = gcc
+CC = cc
 CFLAGS = -o $@ -Wall -mwindows 
 TARGET = AltWind.exe
 OBJS = AltWind.o

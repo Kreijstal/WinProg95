@@ -1,4 +1,4 @@
-CC = gcc
+CC = cc
 CFLAGS = -Wall -shared 
 LIBS = -lgdi32
 TARGET = EdrLib.dll

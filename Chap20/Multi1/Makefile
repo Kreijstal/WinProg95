@@ -1,4 +1,4 @@
-CC = gcc
+CC = cc
 CFLAGS = -Wall -mwindows
 TARGET = Multi1
 SRCS = Multi1.c

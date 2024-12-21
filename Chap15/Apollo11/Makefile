@@ -1,5 +1,5 @@
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -mwindows -I../ShowDib1
 LIBS = -lgdi32
 

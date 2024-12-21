@@ -1,4 +1,4 @@
-CC = gcc
+CC = cc
 RC = windres
 CFLAGS = -Wall -shared
 TARGET = BitLib.dll

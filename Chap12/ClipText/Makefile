@@ -7,10 +7,10 @@ CFLAGS = -mwindows -I. -DUNICODE -D_UNICODE
 LDFLAGS = -mwindows -municode
 
 $(PROG): $(OBJS)
-	gcc $(OBJS) $(LDFLAGS) -o $(PROG)
+	cc $(OBJS) $(LDFLAGS) -o $(PROG)
 
 ClipText.o: ClipText.c resource.h
-	gcc -c $(CFLAGS) $<
+	cc -c $(CFLAGS) $<
 
 ClipText_rc.o: $(RESOURCES) resource.h
 	windres -I. -i $< -o $@

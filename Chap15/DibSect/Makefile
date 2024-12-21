@@ -1,5 +1,5 @@
 
-CC = gcc
+CC = cc
 WINDRES = windres
 CFLAGS = -Wall
 LDFLAGS = -mwindows

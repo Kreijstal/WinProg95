@@ -1,6 +1,6 @@
 # Makefile for HelloMsg using MSYS2/MinGW
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra
 LDFLAGS = -mwindows
 

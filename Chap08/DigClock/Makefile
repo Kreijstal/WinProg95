@@ -3,7 +3,7 @@
 all: digclock.exe
 
 digclock.exe: digclock.c
-	gcc digclock.c -o digclock.exe -Wall -mwindows
+	cc digclock.c -o digclock.exe -Wall -mwindows
 
 clean:
 	rm -f digclock.exe

@@ -1,4 +1,4 @@
-CC = gcc
+CC = cc
 CFLAGS = -o $@ -Wall -mwindows 
 TARGET = SineWave.exe
 OBJS = SineWave.o

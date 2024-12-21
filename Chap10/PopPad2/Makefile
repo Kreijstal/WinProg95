@@ -1,6 +1,6 @@
 # Makefile for PopPad2
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall
 LIBS = -lgdi32 -luser32 -lkernel32
 RC = windres

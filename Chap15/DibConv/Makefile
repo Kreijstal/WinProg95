@@ -1,5 +1,5 @@
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -mwindows
 LIBS = -lgdi32
 RC = windres
