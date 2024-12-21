@@ -4,7 +4,7 @@
   -----------------------------------------------*/
 
 #include <windows.h>
-#include "..\\eztest\\ezfont.h"
+#include "..\\EZTest\\EZFont.h"
 
 TCHAR szAppName [] = TEXT ("FontClip") ;
 TCHAR szTitle [] = TEXT ("FontClip: Using Path for Clipping on Font") ;

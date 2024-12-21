@@ -4,7 +4,7 @@
   ----------------------------------------*/
 
 #include <windows.h>
-#include "..\\eztest\\ezfont.h"
+#include "..\\EZTest\\EZFont.h"
 
 TCHAR szAppName [] = TEXT ("FontRot") ;
 TCHAR szTitle   [] = TEXT ("FontRot: Rotated Fonts") ;

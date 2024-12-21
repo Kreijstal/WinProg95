@@ -4,7 +4,7 @@
   -----------------------------------------*/
 
 #include <windows.h>
-#include "..\\eztest\\ezfont.h"
+#include "..\\EZTest\\EZFont.h"
 
 TCHAR szAppName [] = TEXT ("FontFill") ;
 TCHAR szTitle [] = TEXT ("FontFill: Using Path to Fill Font") ;
