@@ -3,8 +3,8 @@ SOURCES = ClipText.c
 RESOURCES = ClipText.rc
 OBJS = ClipText.o ClipText_rc.o
 
-CFLAGS = -mwindows -I.
-LDFLAGS = -mwindows
+CFLAGS = -mwindows -I. -DUNICODE -D_UNICODE
+LDFLAGS = -mwindows -municode
 
 $(PROG): $(OBJS)
 	gcc $(OBJS) $(LDFLAGS) -o $(PROG)

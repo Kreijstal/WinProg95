@@ -52,7 +52,7 @@ END
 // Menu
 //
 
-CLIPTEXT MENU DISCARDABLE 
+CLIPTEXT MENU
 BEGIN
     POPUP "&Edit"
     BEGIN
@@ -63,20 +63,6 @@ BEGIN
         MENUITEM SEPARATOR
         MENUITEM "&Reset",                      IDM_EDIT_RESET
     END
-END
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// Accelerator
-//
-
-CLIPTEXT ACCELERATORS DISCARDABLE 
-BEGIN
-    "C",            IDM_EDIT_COPY,          VIRTKEY, CONTROL, NOINVERT
-    "V",            IDM_EDIT_PASTE,         VIRTKEY, CONTROL, NOINVERT
-    VK_DELETE,      IDM_EDIT_CLEAR,         VIRTKEY, NOINVERT
-    "X",            IDM_EDIT_CUT,           VIRTKEY, CONTROL, NOINVERT
 END
 
 #endif    // English (U.S.) resources

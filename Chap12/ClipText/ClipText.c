@@ -22,8 +22,8 @@ TCHAR szCaption[]     = TEXT ("Clipboard Text Transfers - ANSI Version") ;
 
 #endif
 
-int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance,
-                    PSTR szCmdLine, int iCmdShow)
+int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPWSTR szCmdLine, int iCmdShow)
 {
      static TCHAR szAppName[] = TEXT ("ClipText") ;
      HACCEL       hAccel ;
