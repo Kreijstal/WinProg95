@@ -1,3 +1,4 @@
+RC = windres
 PROG = Drum.exe
 OBJS = Drum.o DrumFile.o DrumTime.o Drum.res
 
@@ -13,4 +14,4 @@ clean:
 	rm -f $(PROG) $(OBJS)
 
 %.res: %.rc
-	windres $< -O coff -o $@
+	$(RC) $< -O coff -o $@

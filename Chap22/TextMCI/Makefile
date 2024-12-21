@@ -1,3 +1,4 @@
+RC = windres
 PROG = TextMCI.exe
 OBJS = TestMci.o TestMci.res
 
@@ -13,4 +14,4 @@ clean:
 	rm -f $(PROG) $(OBJS)
 
 %.res: %.rc
-	windres $< -O coff -o $@
+	$(RC) $< -O coff -o $@
