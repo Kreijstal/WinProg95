@@ -2,7 +2,6 @@
    HelloWin.c -- Displays "Hello, Windows 98!" in client area
                  (c) Charles Petzold, 1998
   ------------------------------------------------------------*/
-#pragma comment(lib, "winmm.lib")
 
 #include <stdlib.h>
 #include <windows.h>
@@ -12,14 +11,14 @@
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 
-int WINAPI _tWinMain(
-        _In_ HINSTANCE hInstance,
-        _In_opt_ HINSTANCE hPrevInstance,
-        _In_ PTSTR pCmdLine,
-        _In_ int nShowCmd)
+int WINAPI WinMain(
+        HINSTANCE hInstance,
+        HINSTANCE hPrevInstance,
+        LPSTR lpCmdLine,
+        int nShowCmd)
 {
     UNREFERENCED_PARAMETER(hPrevInstance);
-    UNREFERENCED_PARAMETER(pCmdLine);
+    UNREFERENCED_PARAMETER(lpCmdLine);
 
     const TCHAR app_name[] = TEXT("HelloWin");
     WNDCLASSEX  wndclassex;
@@ -50,7 +49,7 @@ int WINAPI _tWinMain(
         return 0;  // premature exit
     }
 
-    HWND hwnd = CreateWindow((PCTSTR)atom,               // window class name or atom
+    HWND hwnd = CreateWindow(app_name,                   // window class name
                              TEXT("The Hello Program"),  // window caption
                              WS_OVERLAPPEDWINDOW,        // window style
                              CW_USEDEFAULT,              // initial x position
