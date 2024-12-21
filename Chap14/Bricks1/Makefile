@@ -4,16 +4,18 @@ CFLAGS = -Wall -mwindows
 LIBS = -lgdi32
 
 TARGET = Bricks1.exe
-OBJS = Bricks1.o Bricks1_res.o
+SRCS = Bricks1.c
+RES = Bricks1.res
+OBJS = $(SRCS:.c=.o)
 
-$(TARGET): $(OBJS)
-	$(CC) -o $(TARGET) $(OBJS) $(LIBS)
-
-Bricks1_res.o: Bricks1.rc
-	$(RC) -O coff $< $@
+$(TARGET): $(OBJS) $(RES)
+	$(CC) $(OBJS) $(RES) $(LIBS) -o $(TARGET)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+%.res: %.rc
+	$(RC) -O coff $< $@
+
 clean:
-	rm -f $(TARGET) $(OBJS)
+	rm -f $(OBJS) $(RES) $(TARGET)
