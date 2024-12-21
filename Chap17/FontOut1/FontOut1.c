@@ -4,7 +4,7 @@
   ------------------------------------------*/
 
 #include <windows.h>
-#include "..\\EZTest\\EZFont.h"
+#include "../EZTest/EZFont.h"
 
 TCHAR szAppName [] = TEXT ("FontOut1") ;
 TCHAR szTitle [] = TEXT ("FontOut1: Using Path to Outline Font") ;
