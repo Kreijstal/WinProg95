@@ -8,6 +8,9 @@ OBJS = PopPad4.o PopPrnt.o PopPad_res.o
 $(TARGET): $(OBJS)
 	$(CC) -o $(TARGET) $(OBJS) $(LIBS)
 
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
 PopPad_res.o: PopPad.rc Resource.h
 	windres PopPad.rc -o PopPad_res.o
 
