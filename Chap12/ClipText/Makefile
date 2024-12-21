@@ -1,3 +1,5 @@
+RC ?= windres
+
 PROG = ClipText.exe
 SOURCES = ClipText.c
 RESOURCES = ClipText.rc
