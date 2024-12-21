@@ -1,0 +1,15 @@
+CC = gcc
+CFLAGS = -Wall -mwindows
+LIBS = -lgdi32
+
+TARGET = Stretch.exe
+OBJS = Stretch.o
+
+$(TARGET): $(OBJS)
+	$(CC) -o $(TARGET) $(OBJS) $(LIBS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(TARGET) $(OBJS)
