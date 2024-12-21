@@ -1,10 +1,10 @@
 
 CC = gcc
-CFLAGS = -Wall -mwindows
+CFLAGS = -Wall -mwindows -I..
 LIBS = -lgdi32
 
 TARGET = Apollo11.exe
-SRCS = Apollo11.c
+SRCS = Apollo11.c ../DibFile.c
 OBJS = $(SRCS:.c=.o)
 
 $(TARGET): $(OBJS)

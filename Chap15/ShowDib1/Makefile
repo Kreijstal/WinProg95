@@ -1,10 +1,10 @@
 
 CC = gcc
-CFLAGS = -Wall -mwindows
+CFLAGS = -Wall -mwindows -I..
 LIBS = -lgdi32
 
 TARGET = ShowDib1.exe
-SRCS = ShowDib1.c DibFile.c
+SRCS = ShowDib1.c ../DibFile.c
 RES = ShowDib1.res
 OBJS = $(SRCS:.c=.o) $(RES)
 
