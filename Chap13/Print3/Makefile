@@ -9,7 +9,7 @@ $(TARGET): $(OBJS)
 	$(CC) -o $(TARGET) $(OBJS) $(LIBS)
 
 Print_res.o: Print.rc Resource.h
-	windres Print.rc -o Print_res.o
+	$(RC) Print.rc -o Print_res.o
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
