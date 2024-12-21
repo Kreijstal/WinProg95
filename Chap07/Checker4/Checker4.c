@@ -4,6 +4,7 @@
   -------------------------------------------------*/
 
 #include <windows.h>
+#include <stdint.h>
 
 #define DIVISIONS 5
 
@@ -76,8 +77,8 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
                     hwndChild[x][y] = CreateWindow (szChildClass, NULL,
                               WS_CHILDWINDOW | WS_VISIBLE,
                               0, 0, 0, 0,
-                              hwnd, (HMENU) (y << 8 | x),
-                              (HINSTANCE) GetWindowLong (hwnd, GWL_HINSTANCE),
+                              hwnd, (HMENU)(INT_PTR)(y << 8 | x),
+                              (HINSTANCE) GetWindowLong (hwnd, GWLP_HINSTANCE),
                               NULL) ;
           return 0 ;
                
