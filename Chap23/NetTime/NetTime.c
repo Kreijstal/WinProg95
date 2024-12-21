@@ -10,8 +10,8 @@
 #define ID_TIMER         1
 
 LRESULT CALLBACK WndProc   (HWND, UINT, WPARAM, LPARAM) ;
-BOOL    CALLBACK MainDlg   (HWND, UINT, WPARAM, LPARAM) ;
-BOOL    CALLBACK ServerDlg (HWND, UINT, WPARAM, LPARAM) ;
+INT_PTR CALLBACK MainDlg   (HWND, UINT, WPARAM, LPARAM) ;
+INT_PTR CALLBACK ServerDlg (HWND, UINT, WPARAM, LPARAM) ;
 
 void ChangeSystemTime (HWND hwndEdit, ULONG ulTime) ;
 void FormatUpdatedTime (HWND hwndEdit, SYSTEMTIME * pstOld, 
@@ -102,7 +102,7 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
      return DefWindowProc (hwnd, message, wParam, lParam) ;
 }
 
-BOOL CALLBACK MainDlg (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
+INT_PTR CALLBACK MainDlg (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
      static char   szIPAddr[32] = { "132.163.135.130" } ;
      static HWND   hwndButton, hwndEdit ;
@@ -286,7 +286,7 @@ BOOL CALLBACK MainDlg (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
      return FALSE ;
 }
 
-BOOL CALLBACK ServerDlg (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
+INT_PTR CALLBACK ServerDlg (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
      static char * szServer ;
      static WORD   wServer = IDC_SERVER1 ;
