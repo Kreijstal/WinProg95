@@ -1,18 +1,21 @@
+RC ?= windres
+
 CC = cc
 CFLAGS = -Wall -mwindows
-LIBS = -lgdi32
+LDFLAGS = -mwindows
+LDLIBS = -lgdi32
 
 TARGET = Blowup.exe
-OBJS = Blowup.o Blowup_res.o
+OBJS = Blowup.o Blowup.res
 
 $(TARGET): $(OBJS)
-	$(CC) -o $(TARGET) $(OBJS) $(LIBS)
-
-Blowup_res.o: Blowup.rc
-	$(RC) $< $@
+	$(CC) $(OBJS) $(LDFLAGS) $(LDLIBS) -o $(TARGET)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
+
+%.res: %.rc
+	$(RC) -I. $< -O coff -o $@
 
 clean:
 	rm -f $(TARGET) $(OBJS)
