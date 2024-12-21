@@ -27,7 +27,7 @@ all: $(TARGET)
 
 # Linking
 $(TARGET): $(OBJS)
-	$(CC) $(LFLAGS) -o $@ $^
+	$(CC) -o $@ $^ $(LFLAGS)
 
 # Compiling
 %.o: %.c $(HEADERS)
