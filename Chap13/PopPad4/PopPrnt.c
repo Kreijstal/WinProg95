@@ -9,7 +9,7 @@
 BOOL bUserAbort ;
 HWND hDlgPrint ;
 
-BOOL CALLBACK PrintDlgProc (HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam)
+INT_PTR CALLBACK PrintDlgProc (HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam)
 {
      switch (msg)
      {
@@ -104,8 +104,8 @@ BOOL PopPrntPrintFile (HINSTANCE hInst, HWND hwnd, HWND hwndEdit,
      bSuccess   = TRUE ;
      bUserAbort = FALSE ;
      
-     hDlgPrint = CreateDialog (hInst, TEXT ("PrintDlgBox"), 
-                               hwnd, PrintDlgProc) ;
+     hDlgPrint = CreateDialog (hInst, TEXT ("PrintDlgBox"),
+                               hwnd, (DLGPROC) PrintDlgProc) ;
 
      SetDlgItemText (hDlgPrint, IDC_FILENAME, szTitleName) ;
      SetAbortProc (pd.hDC, AbortProc) ;

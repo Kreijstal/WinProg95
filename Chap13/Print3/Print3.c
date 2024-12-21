@@ -15,7 +15,7 @@ TCHAR     szCaption[] = TEXT ("Print Program 3 (Dialog Box)") ;
 BOOL bUserAbort ;
 HWND hDlgPrint ;
 
-BOOL CALLBACK PrintDlgProc (HWND hDlg, UINT message, 
+INT_PTR CALLBACK PrintDlgProc (HWND hDlg, UINT message, 
                             WPARAM wParam, LPARAM lParam)
 {
      switch (message)
@@ -66,8 +66,8 @@ BOOL PrintMyPage (HWND hwnd)
      EnableWindow (hwnd, FALSE) ;
      
      bUserAbort = FALSE ;
-     hDlgPrint = CreateDialog (hInst, TEXT ("PrintDlgBox"), 
-                               hwnd, PrintDlgProc) ;
+     hDlgPrint = CreateDialog (hInst, TEXT ("PrintDlgBox"),
+                               hwnd, (DLGPROC) PrintDlgProc) ;
      
      SetAbortProc (hdcPrn, AbortProc) ;
      
