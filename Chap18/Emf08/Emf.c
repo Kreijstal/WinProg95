@@ -5,7 +5,7 @@
 
 #include <windows.h>
 #include <commdlg.h>
-#include "..\\emf8\\resource.h"
+#include "resource.h"
 
 extern void CreateRoutine (HWND) ;
 extern void PaintRoutine  (HWND, HDC, int, int) ;
