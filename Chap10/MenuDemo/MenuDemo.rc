@@ -56,7 +56,7 @@ MENUDEMO MENU DISCARDABLE
 BEGIN
     POPUP "&File"
     BEGIN
-        MENUITEM "&New",                        ID_MENUITEM40020
+        MENUITEM "&New",                        IDM_FILE_NEW
         MENUITEM "&Open",                       IDM_FILE_OPEN
         MENUITEM "&Save",                       IDM_FILE_SAVE
         MENUITEM "Save &As...",                 IDM_FILE_SAVE_AS
