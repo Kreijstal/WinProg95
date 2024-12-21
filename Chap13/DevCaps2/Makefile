@@ -16,10 +16,9 @@ TARGET = DevCaps2.exe
 # Source files
 SRCS = DevCaps2.c
 RES_SCRIPT = DevCaps2.rc
-RES_OBJ = DevCaps2_res.o
 
 # Object files
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRCS:.c=.o) DevCaps2.res
 
 # Header files
 HEADERS = Resource.h
@@ -28,7 +27,7 @@ HEADERS = Resource.h
 all: $(TARGET)
 
 # Linking
-$(TARGET): $(OBJS) $(RES_OBJ)
+$(TARGET): $(OBJS)
 	$(CC) -o $@ $^ $(LFLAGS)
 
 # Compiling
@@ -36,8 +35,8 @@ $(TARGET): $(OBJS) $(RES_OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Resource compilation
-$(RES_OBJ): $(RES_SCRIPT) $(HEADERS)
-	$(RC) -O coff $< $@
+%.res: %.rc $(HEADERS)
+	$(RC) $< -o $@
 
 # Clean rule
 clean:
