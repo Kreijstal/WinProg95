@@ -4,7 +4,7 @@
   -----------------------------------------*/
 
 #include <windows.h>
-#include "Resource.h"
+#include "resource.h"
 
 #define ID_TIMER 1
 
