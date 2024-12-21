@@ -1,5 +1,5 @@
 PROG = Record3.exe
-OBJS = Record3.o Record.res
+OBJS = Record3.o ../Record1/Record.res
 
 CFLAGS = -Wall -I../Record1
 LDFLAGS = -mwindows
