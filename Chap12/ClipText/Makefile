@@ -7,13 +7,13 @@ CFLAGS = -mwindows -I. -DUNICODE -D_UNICODE
 LDFLAGS = -mwindows -municode
 
 $(PROG): $(OBJS)
-	cc $(OBJS) $(LDFLAGS) -o $(PROG)
+	$(CC) $(OBJS) $(LDFLAGS) -o $(PROG)
 
 ClipText.o: ClipText.c Resource.h
-	cc -c $(CFLAGS) $<
+	$(CC) -c $(CFLAGS) $<
 
 ClipText_rc.o: $(RESOURCES) Resource.h
-	windres -I. -i $< -o $@
+	$(RC) -I. -i $< -o $@
 
 clean:
 	rm -f $(PROG) $(OBJS)
