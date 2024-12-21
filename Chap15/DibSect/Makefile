@@ -1,6 +1,6 @@
 
 CC = cc
-WINDRES = windres
+RC ?= windres
 CFLAGS = -Wall
 LDFLAGS = -mwindows
 LIBS = -lgdi32
@@ -17,7 +17,7 @@ $(TARGET): $(OBJS) $(RES)
 	$(CC) $(CFLAGS) -c $<
 
 $(RES): DibSect.rc Resource.h
-	$(WINDRES) -O coff DibSect.rc $(RES)
+	$(RC) -O coff DibSect.rc $(RES)
 
 clean:
 	rm -f $(OBJS) $(RES) $(TARGET)
