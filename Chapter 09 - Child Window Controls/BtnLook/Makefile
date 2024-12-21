@@ -1,9 +1,9 @@
 .PHONY: all clean
 
-all: btnlook.exe
+all: BtnLook.exe
 
-btnlook.exe: btnlook.c
-	cc btnlook.c -o btnlook.exe -Wall -mwindows -lcomctl32
+BtnLook.exe: BtnLook.c
+	cc BtnLook.c -o BtnLook.exe -Wall -mwindows -lcomctl32
 
 clean:
-	rm -f btnlook.exe
+	rm -f BtnLook.exe
