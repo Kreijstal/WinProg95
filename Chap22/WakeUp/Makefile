@@ -3,7 +3,7 @@ OBJS = WakeUp.o
 
 CFLAGS = -Wall
 LDFLAGS = -mwindows
-LDLIBS = -lwinmm
+LDLIBS = -lwinmm -lcomctl32
 
 $(PROG): $(OBJS)
 	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LDLIBS)
